@@ -1,0 +1,10 @@
+# Obsidian cache
+.obsidian/workspace
+.obsidian/workspace.json
+# OS files
+.DS_Store
+Thumbs.db
+# Node / Python caches (just in case)
+node_modules/
+__pycache__/
+.ipynb_checkpoints/

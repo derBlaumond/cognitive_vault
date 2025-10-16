@@ -1,0 +1,11 @@
+{
+  "theme": "Minimal",
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [],
+  "plugins": {
+    "templater-obsidian": true,
+    "calendar": true,
+    "dataview": true,
+    "obsidian-git": true
+  }
+}
