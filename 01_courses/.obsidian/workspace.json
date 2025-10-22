@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07_node_js/02_basic_functions_node/Untitled.md",
+                "file": "07_node_js/02_basic_functions_node/01_runtime_modules.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "01_runtime_modules"
+            }
+          },
+          {
+            "id": "34ff8a26901bd340",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "07_node_js/02_basic_functions_node/01_runtime_modules.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01_runtime_modules"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -181,17 +196,32 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0787ff953f36cd04",
+  "active": "34ff8a26901bd340",
   "lastOpenFiles": [
+    "07_node_js/02_basic_functions_node/02_global_process_lifecycle.md",
+    "07_node_js/01_js/03_arrow_functions_destructuring.md",
+    "07_node_js/01_js/01_Call Stack & Event Loop.md",
+    "07_node_js/02_basic_functions_node/01_runtime_modules.md",
+    "07_node_js/03_http_module/04_https_http2_cluster.md",
+    "07_node_js/03_http_module/03_cookies_sessions.md",
+    "07_node_js/04_package_manager/01_package_json_and_semver.md",
+    "07_node_js/04_package_manager/02_npm_commands_and_publishing.md",
+    "07_node_js/03_http_module/02_rest_api_and_http_methods.md",
+    "07_node_js/03_http_module/01_http_server_and_static_files.md",
+    "07_node_js/04_package_manager",
+    "07_node_js/03_http_module/무제.md",
+    "07_node_js/02_basic_functions_node/05_parallelism_error_handling.md",
+    "07_node_js/03_/무제",
+    "07_node_js/03_http_module",
+    "07_node_js/02_basic_functions_node/04_streams_memory.md",
+    "07_node_js/02_basic_functions_node/03_filesystem_iocore.md",
+    "무제.md",
     "Screenshot 2025-10-16 at 23.18.39.png",
-    "07_node_js/02_basic_functions_node/Untitled.md",
     "07_node_js/01_js/06_??_?..md",
     "07_node_js/02_basic_functions_node",
     "07_node_js/01_js/05_map_set_weakmap_weakset.md",
     "07_node_js/01_js/04_class_promise_async_await.md",
-    "07_node_js/01_js/03_arrow_functions_destructuring.md",
     "07_node_js/01_js/02_var_const_literals.md",
-    "07_node_js/01_js/01_Call Stack & Event Loop.md",
     "Untitled 2.md",
     "07_node_js/01_js",
     "07_node_js",
