@@ -1,0 +1,207 @@
+{
+  "main": {
+    "id": "e3fe33c83d17f087",
+    "type": "split",
+    "children": [
+      {
+        "id": "67cfaffae530899c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0787ff953f36cd04",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "07_node_js/02_basic_functions_node/Untitled.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "732ca1ecf529be04",
+    "type": "split",
+    "children": [
+      {
+        "id": "1641c915434e5ce0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "98e429f5e5979035",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "936c6aadd1c764eb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ce95c01628a1ed9b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "4adaeee153e21684",
+    "type": "split",
+    "children": [
+      {
+        "id": "89501537a9693fb8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e301e5d059d3fbc",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "00_aws_practitioner/01_cloud_computing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 01_cloud_computing"
+            }
+          },
+          {
+            "id": "89ac99afaeb9ce31",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "00_aws_practitioner/01_cloud_computing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 01_cloud_computing"
+            }
+          },
+          {
+            "id": "2cdf164c2bf8bf6c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "ffe94c924a78c0c3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "00_aws_practitioner/01_cloud_computing.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 01_cloud_computing"
+            }
+          },
+          {
+            "id": "0e5435c401192bd9",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "0787ff953f36cd04",
+  "lastOpenFiles": [
+    "Screenshot 2025-10-16 at 23.18.39.png",
+    "07_node_js/02_basic_functions_node/Untitled.md",
+    "07_node_js/01_js/06_??_?..md",
+    "07_node_js/02_basic_functions_node",
+    "07_node_js/01_js/05_map_set_weakmap_weakset.md",
+    "07_node_js/01_js/04_class_promise_async_await.md",
+    "07_node_js/01_js/03_arrow_functions_destructuring.md",
+    "07_node_js/01_js/02_var_const_literals.md",
+    "07_node_js/01_js/01_Call Stack & Event Loop.md",
+    "Untitled 2.md",
+    "07_node_js/01_js",
+    "07_node_js",
+    "Untitled.md",
+    "Untitled",
+    "Untitled 1.md",
+    "Screenshot 2025-10-16 at 23.14.37.png",
+    "Screenshot 2025-10-16 at 23.17.44.png",
+    "00",
+    "00_aws_practitioner/01_cloud_computing.md",
+    "00_aws_practitioner"
+  ]
+}

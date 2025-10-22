@@ -8,3 +8,9 @@ Thumbs.db
 node_modules/
 __pycache__/
 .ipynb_checkpoints/
+
+# Build & IDE
+**/out/
+**/.idea/
+**/__pycache__/
+**/.ipynb_checkpoints/
