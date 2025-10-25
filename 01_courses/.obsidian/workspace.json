@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07_node_js/02_basic_functions_node/01_runtime_modules.md",
+                "file": "07_node_js/02_basic_functions_node/04_streams_memory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01_runtime_modules"
+              "title": "04_streams_memory"
             }
           }
         ],
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 236.5,
-    "collapsed": true
+    "width": 236.5
   },
   "right": {
     "id": "4adaeee153e21684",
@@ -199,10 +198,11 @@
   },
   "active": "34ff8a26901bd340",
   "lastOpenFiles": [
+    "07_node_js/02_basic_functions_node/03_filesystem_iocore.md",
+    "07_node_js/02_basic_functions_node/01_runtime_modules.md",
     "07_node_js/02_basic_functions_node/02_global_process_lifecycle.md",
     "07_node_js/01_js/03_arrow_functions_destructuring.md",
     "07_node_js/01_js/01_Call Stack & Event Loop.md",
-    "07_node_js/02_basic_functions_node/01_runtime_modules.md",
     "07_node_js/03_http_module/04_https_http2_cluster.md",
     "07_node_js/03_http_module/03_cookies_sessions.md",
     "07_node_js/04_package_manager/01_package_json_and_semver.md",
@@ -215,7 +215,6 @@
     "07_node_js/03_/무제",
     "07_node_js/03_http_module",
     "07_node_js/02_basic_functions_node/04_streams_memory.md",
-    "07_node_js/02_basic_functions_node/03_filesystem_iocore.md",
     "무제.md",
     "Screenshot 2025-10-16 at 23.18.39.png",
     "07_node_js/01_js/06_??_?..md",
