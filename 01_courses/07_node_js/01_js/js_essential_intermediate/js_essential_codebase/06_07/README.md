@@ -1,0 +1,59 @@
+# 06_07
+
+**Chapter 6 - Movie 7**
+
+이 폴더는 JavaScript Essential Training 강의의 연습 파일을 포함합니다.
+
+---
+
+## 파일 구조
+
+```
+index.html
+script.js
+```
+
+---
+
+## 파일 내용
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console demo</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body></body>
+</html>
+
+```
+
+---
+
+### script.js
+
+```javascript
+/**
+ * Assignment vs comparison
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Relational_operators
+ */
+
+let a = 5;
+let b = 4;
+
+console.log(`let a: ${a} (${typeof a})`);
+console.log(`let b: ${b} (${typeof b})`);
+
+if (a == b) {
+  console.log(`Match! let a and let b are the same value.`);
+} else {
+  console.error(`No match: let a and let b are NOT same value.`);
+}
+
+```
+

@@ -1,0 +1,84 @@
+# 03_11
+
+**Chapter 3 - Movie 11**
+
+이 폴더는 JavaScript Essential Training 강의의 연습 파일을 포함합니다.
+
+---
+
+## 파일 구조
+
+```
+index.html
+script.js
+```
+
+---
+
+## 파일 내용
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body></body>
+</html>
+
+```
+
+---
+
+### script.js
+
+```javascript
+/**
+ * Create an object constructor function for the Backpack object type.
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
+ */
+
+function Backpack(
+  name,
+  volume,
+  color,
+  pocketNum,
+  strapLengthL,
+  strapLengthR,
+  lidOpen
+) {
+  this.name = name;
+  this.volume = volume;
+  this.color = color;
+  this.pocketNum = pocketNum;
+  this.strapLength = {
+    left: strapLengthL,
+    right: strapLengthR,
+  };
+  this.lidOpen = lidOpen;
+  this.toggleLid = function (lidStatus) {
+    this.lidOpen = lidStatus;
+  };
+  this.newStrapLength = function (lengthLeft, lengthRight) {
+    this.strapLength.left = lengthLeft;
+    this.strapLength.right = lengthRight;
+  };
+}
+
+const everydayPack = new Backpack(
+  "Everyday Backpack",
+  30,
+  "grey",
+  15,
+  26,
+  26,
+  false
+);
+
+```
+

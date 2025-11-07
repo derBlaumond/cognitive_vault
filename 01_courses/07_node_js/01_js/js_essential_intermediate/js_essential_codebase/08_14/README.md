@@ -1,0 +1,133 @@
+# 08_14
+
+**Chapter 8 - Movie 14**
+
+이 폴더는 JavaScript Essential Training 강의의 연습 파일을 포함합니다.
+
+---
+
+## 파일 구조
+
+```
+index.html
+script.js
+```
+
+---
+
+## 파일 내용
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console demo</title>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <article></article>
+    </main>
+  </body>
+</html>
+
+```
+
+---
+
+### script.js
+
+```javascript
+/**
+ * Loops Aplenty!
+ * @link https://developer.mozilla.org/en-US/docs/Glossary/Callback_function
+ */
+
+const stuff = ["piggy", "headlamp", "pen", "pencil", "eraser", "water bottle"];
+
+const nestedObjects = {
+  item01: {
+    name: "piggy",
+    type: "toy",
+    weight: 30,
+  },
+  item02: {
+    name: "headlamp",
+    type: "equipment",
+    weight: 120,
+  },
+  item03: {
+    name: "pen",
+    type: "tool",
+    weight: 30,
+  },
+  item04: {
+    name: "pencil",
+    type: "tool",
+    weight: 30,
+  },
+  item05: {
+    name: "eraser",
+    type: "tool",
+    weight: 40,
+  },
+  item03: {
+    name: "water bottle",
+    type: "equipment",
+    weight: 1300,
+  },
+};
+
+const article = document.querySelector("article");
+let stuffList = document.createElement("ul");
+
+
+/**
+ * for loop
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for
+ */
+for (let i = 0; i < stuff.length; i++) {
+  let listItem = document.createElement("li");
+  listItem.innerHTML = stuff[i];
+  stuffList.append(listItem);
+}
+
+/**
+ * for...of loop and arrays
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+ */
+// for (const item of stuff) {
+//   let listItem = document.createElement("li");
+//   listItem.innerHTML = item;
+//   stuffList.append(listItem);
+// }
+
+/**
+ * foreach array method
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+ */
+// stuff.forEach((item) => {
+//   let listItem = document.createElement("li");
+//   listItem.innerHTML = item;
+//   stuffList.append(listItem);
+// });
+
+/**
+ * for...in loop and objects
+ * @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+ */
+// for (const singleObject in nestedObjects) {
+//   let listItem = document.createElement("li");
+//   listItem.innerHTML = `Name: ${nestedObjects[singleObject].name}`;
+//   stuffList.append(listItem);
+// }
+
+
+article.append(stuffList);
+
+```
+
