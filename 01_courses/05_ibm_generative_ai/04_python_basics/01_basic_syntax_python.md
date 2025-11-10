@@ -310,6 +310,10 @@ with open("data.txt", "w") as f: # 변수 할당이 아닌 with as 를 쓰면 �
 
 with open("data.txt", "r") as f:
     print(f.read())
+    
+file.readlines() # reads all lines as a list
+readline() # reads the next line as a string
+file.read() # reads the entire file content as a string
 ```
 ### 줄 단위 읽기
 
