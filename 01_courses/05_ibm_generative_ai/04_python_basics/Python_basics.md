@@ -1,4 +1,4 @@
-## 🧩 1️⃣ 기본 자료형 (Data Types)
+## 1️⃣ 기본 자료형 (Data Types)
 
 | 타입        | 설명   | 예시            |
 | --------- | ---- | ------------- |
@@ -6,8 +6,7 @@
 | **float** | 실수형  | `y = 3.14`    |
 | **bool**  | 참/거짓 | `a = True`    |
 | **str**   | 문자열  | `s = "Hello"` |
-
-### 🧠 주요 함수 및 메서드
+### 주요 함수 및 메서드
 
 ```python
 s = "Python"
@@ -18,13 +17,10 @@ s.replace("Py", "My")  # 'Mython'
 ```
 
 ---
+## 2️⃣ 자료구조 (Collections)
 
-## 🧩 2️⃣ 자료구조 (Collections)
-
-### 📘 List (리스트)
-
+### [ List ]
 - **순서 있음 / 변경 가능**
-    
 
 ```python
 fruits = ["apple", "banana"]
@@ -34,8 +30,6 @@ del fruits[0]
 print(fruits)  # ['orange', 'cherry']
 ```
 
-#### 실전 예제
-
 ```python
 numbers = [1, 2, 3, 4]
 print(sum(numbers))          # 10
@@ -43,25 +37,59 @@ print(numbers[:2])           # [1, 2]
 print(3 in numbers)          # True
 ```
 
+### 주요 함수
+
+```python
+fruits = ["apple", "banana", "orange"]
+
+fruits.append("apple") # ["apple", "banana", "orange", "apple"]
+fruits_2 = fruits.copy()
+fruits.count("apple") # 2
+del fruits[3] # index 값에 맞는 엘리먼트 제거. output: ["apple", "banana", "orange"]
+
+more_fruits = ["mango", "grape"]
+fruits.extend(more_fruits) # add mutiple elements. output: ["apple", "banana", "orange", "mango", "grape"]
+
+fruits.insert(1, "melon") # .insert(index, element). output: ["apple", "melon", "banana", "orange", "mango", "grape"]
+
+removed_element = fruits.pop() # Removes and returns the last element. output: grape"
+
+fruits.remove("melon") # output: ["apple", "banana", "orange", "mango"]
+
+my_list.reverse()
+
+print(my_list[1:3]) # ["banana", "orange"]
+
+my_list = [5, 2, 8, 1, 9] 
+my_list.sort() # Output: [1, 2, 5, 8, 9] 
+my_list.sort(reverse=True) # Output: [9, 8, 5, 2, 1]
+  ```
 ---
-
-### 📘 Tuple (튜플)
-
+### ( Tuple )
 - **순서 있음 / 변경 불가능**
-    
 
 ```python
 t = (10, 20, 30)
 print(t[1])  # 20
-# t[1] = 50 ❌ (오류)
+# t[1] = 50 ❌ (오류) -> immutable
 ```
 
+### 주요 함수
+```python
+fruits = ("apple", "banana", "apple", "orange")
+
+fruits.count("apple") # 1
+fruits.index("apple") # 1
+
+numbers = (10, 20, 5, 30)
+sum(numbers) # 65
+min(numbers) # 5
+max(numbers) # 30
+len(numbers) # 4
+```
 ---
-
-### 📘 Dictionary (딕셔너리)
-
+### { Dictionary }
 - **키-값 쌍 저장 구조**
-    
 
 ```python
 person = {"name": "Alice", "age": 30}
@@ -70,13 +98,30 @@ person["city"] = "Berlin"
 for key, value in person.items():
     print(key, value)
 ```
+### 주요 함수
+```python
+person = { 
+   "name": "John", 
+   "age": 30, 
+   "city": "New York"
+}
+
+name = person["name"]                   # name 에 "John" 할당
+
+person["Country"] = "USA"               # add or modify 
+del person["Country"].                  # delete
+
+person.update({"Profession": "Doctor"}) # merge dict into existing dict
+new_person = person.copy()              
+person_keys = list(person.keys())       # 모든 키를 가져와 리스트로 변환. ['name', 'age', 'city']
+person_values = list(person.values())   # 모든 밸류를 가져와 리스트로 변환. ['John', 30, 'New York']
+info = list(person.items())             # 모든 키-값 쌍을 튜플 형태로 가져와서 튜플 목록으로 변환. [('name', 'John'), ('age', 30), ('city', 'New York')]
+
+```
 
 ---
-
-### 📘 Set (집합)
-
+### { Set } 집합
 - **중복 없음 / 순서 없음**
-    
 
 ```python
 a = {1, 2, 3}
@@ -85,18 +130,18 @@ print(a.union(b))         # {1,2,3,4,5}
 print(a.intersection(b))  # {3}
 ```
 
-#### 리스트 중복 제거
+#### 리스트 중복 제거 --> set 변환 후 되돌리기
 
 ```python
 emails = ["a@x.com", "b@x.com", "a@x.com"]
-unique = list(set(emails))
+unique = list(set(emails)) # list -> set 변환 + set -> list 변환 동시에
 ```
 
 ---
 
-## 🧩 3️⃣ 제어문 (Control Flow)
+## 3️⃣ 제어문 (Control Flow)
 
-### 📘 조건문 (if / elif / else)
+### 조건문 (if / elif / else)
 
 ```python
 age = 20
@@ -106,11 +151,21 @@ elif age >= 13:
     print("청소년")
 else:
     print("어린이")
+
+is_do_not_disturb = True
+if not is_do_not_disturb:
+    send_notification("New message received")
+    
+friend1_likes_comedy = True
+friend2_likes_action = False
+friend3_likes_drama = False
+if friend1_likes_comedy or friend2_likes_action or friend3_likes_drama:
+    choose a movie()
 ```
 
 ---
 
-### 📘 반복문 (for / while)
+### 반복문 (for / while)
 
 ```python
 for i in range(5):
@@ -122,10 +177,10 @@ while x < 3:
     x += 1
 ```
 
-#### 루프 제어
+- 루프 제어
 
 ```python
-for i in range(5):
+for i in range(5): # range from 0 to 5
     if i == 2:
         continue
     if i == 4:
@@ -133,58 +188,54 @@ for i in range(5):
     print(i)
 ```
 
-#### 중첩 루프 예시
-
+- 중첩 루프 예시
 ```python
-for i in range(1, 4):
+for i in range(1, 4): ## range from 1 to 4
     for j in range(1, 4):
         print(i, j)
 ```
 
 ---
 
-## 🧩 4️⃣ 함수 (Functions)
+## 4️⃣ 함수 (Functions)
 
-### 📘 기본 구조
+### 기본 구조
 
 ```python
 def add(a, b):
     return a + b
 ```
-
-### 📘 기본값 매개변수
+### 기본값 매개변수
 
 ```python
 def greet(name="Guest"):
     print(f"Hello, {name}")
 ```
-
-### 📘 키워드 인자
+### 키워드 인자
 
 ```python
 def show(name, age):
     print(f"{name} - {age}")
 show(age=25, name="Alice")
 ```
+### 가변 인자
 
-### 📘 가변 인자
-
+- 함수로 전달되는 키워드 없는 인자들을 모두 모아서 **튜플(tuple)** 형태로 저장
 ```python
 def add_all(*args):
     return sum(args)
-print(add_all(1, 2, 3))
+print(add_all(1, 2, 3)) # func(1, 2, 3)
 ```
+### 가변 키워드 인자
 
-### 📘 가변 키워드 인자
-
+- `key=value` 형태로 전달되는 인자들을 모두 모아서 **딕셔너리(dictionary)** 형태로 저장
 ```python
 def show_info(**kwargs):
     for key, val in kwargs.items():
         print(key, val)
-show_info(name="Alice", age=25)
+show_info(name="Alice", age=25) # func(a=1, b=2)
 ```
-
-### 📘 스코프 (Scope)
+### 스코프 (Scope)
 
 ```python
 x = 10
@@ -194,7 +245,6 @@ def change():
 change()
 print(x)  # 20
 ```
-
 #### 안전한 방식 (return 활용)
 
 ```python
@@ -204,10 +254,9 @@ x = multiply(x)
 ```
 
 ---
+## 5️⃣ 예외 처리 (Exception Handling)
 
-## 🧩 5️⃣ 예외 처리 (Exception Handling)
-
-### 📘 기본 구조
+### 기본 구조
 
 ```python
 try:
@@ -215,8 +264,7 @@ try:
 except ValueError:
     print("숫자만 입력하세요.")
 ```
-
-### 📘 여러 예외
+### 여러 예외
 
 ```python
 try:
@@ -227,8 +275,7 @@ except ValueError:
 except ZeroDivisionError:
     print("0으로 나눌 수 없습니다.")
 ```
-
-### 📘 else / finally
+### else / finally
 
 ```python
 try:
@@ -240,8 +287,7 @@ else:
 finally:
     print("항상 실행됨")
 ```
-
-### 📘 사용자 정의 예외
+### 사용자 정의 예외
 
 ```python
 class NegativeError(Exception):
@@ -254,20 +300,18 @@ def sqrt(x):
 ```
 
 ---
+## 6️⃣ 파일 입출력 (File I/O)
 
-## 🧩 6️⃣ 파일 입출력 (File I/O)
-
-### 📘 쓰기 / 읽기
+### 쓰기 / 읽기
 
 ```python
-with open("data.txt", "w") as f:
+with open("data.txt", "w") as f: # 변수 할당이 아닌 with as 를 쓰면 자동으로 open -> close 가 된다.
     f.write("Hello\nPython")
 
 with open("data.txt", "r") as f:
     print(f.read())
 ```
-
-### 📘 줄 단위 읽기
+### 줄 단위 읽기
 
 ```python
 with open("data.txt", "r") as f:
@@ -276,8 +320,7 @@ with open("data.txt", "r") as f:
 ```
 
 ---
-
-### 📘 로그 파일 작성 예시
+### 로그 파일 작성 예시
 
 ```python
 from datetime import datetime
