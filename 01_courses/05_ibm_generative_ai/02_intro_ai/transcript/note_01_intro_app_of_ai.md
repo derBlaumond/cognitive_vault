@@ -1,7 +1,3 @@
-# Introduction to Artificial Intelligence (AI)
-
----
-
 ## 1. Introducing AI
 
 ### 개념 정리
@@ -14,17 +10,11 @@ AI는 **단순한 자동화(Automation)** 수준부터, **복잡한 딥러닝(De
 ### 역사적 흐름
 
 - **1950년대:** 앨런 튜링(Alan Turing)이 ‘튜링 테스트(Turing Test)’ 제안 → 기계 지능의 개념 시작
-    
 - **1956년:** 존 매카시(John McCarthy)가 “Artificial Intelligence” 용어를 최초로 사용
-    
 - **1960–70년대:** ELIZA, SHRDLU 같은 초기 대화형 프로그램과 전문가 시스템(Expert Systems) 등장
-    
 - **1980–1990년대:** 머신러닝(Machine Learning) 개념 확립, 신경망(Neural Network) 도입
-    
 - **2000년대:** 딥러닝(Deep Learning) 기술 발전
-    
 - **2010년 이후:** NLP(자연어 처리)·컴퓨터 비전·자율주행 등 산업 전반으로 확산
-    
 
 ### 핵심 기술 기반
 
@@ -53,15 +43,15 @@ AI 학습 방식은 다음 세 가지로 나뉜다:
 2. **비지도학습(Unsupervised Learning)** – 정답 없이 패턴을 스스로 발견
     
 3. **강화학습(Reinforcement Learning)** – 보상과 벌점을 통해 최적 행동을 학습
-    
+
 
 ### AI의 분류 (Strength 기준)
 
-|유형|설명|예시|
-|---|---|---|
-|**약한 AI (Weak / Narrow AI)**|특정 영역에 특화된 AI|번역기, 스팸 필터, 추천 엔진|
-|**강한 AI (Strong / General AI)**|여러 영역에서 인간 수준으로 학습·응용 가능|범용 인공지능(AGI) – 현재 연구 단계|
-|**초지능 (Super / Conscious AI)**|인간을 능가하는 자각적 AI|자율로 사고·감정 판단 (이론적 개념)|
+| 유형                              | 설명                       | 예시                      |
+| ------------------------------- | ------------------------ | ----------------------- |
+| **약한 AI (Weak / Narrow AI)**    | 특정 영역에 특화된 AI            | 번역기, 스팸 필터, 추천 엔진       |
+| **강한 AI (Strong / General AI)** | 여러 영역에서 인간 수준으로 학습·응용 가능 | 범용 인공지능(AGI) – 현재 연구 단계 |
+| **초지능 (Super / Conscious AI)**  | 인간을 능가하는 자각적 AI          | 자율로 사고·감정 판단 (이론적 개념)   |
 
 ### AI의 학제적 특성
 
