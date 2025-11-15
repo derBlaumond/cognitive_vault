@@ -48,46 +48,41 @@ Prettier automatically formats your code, ensuring consistent styling across te
 
 With Prettier ESLint, developers can write cleaner code without worrying about conflicts between formatting and linting. Now, let's move on to the final extension. Finally, let's look at Pretty TypeScript Errors, an extension that improves the debugging experience. It enhances the readability of TypeScript error messages right inside the editor, and it makes debugging easier by presenting structured user-friendly error descriptions. With Pretty TypeScript Errors, developers save time by quickly understanding issues. That wraps up our set of essential VS Code extensions for TypeScript. Thanks for joining in. I will see you in the next one. 
 
-Until then, keep learning and exploring.
 
 ## TypeScript Ecosystem vs. JavaScript Ecosystem
 JavaScript has been the dominant language of the web for more than two decades. It was created to make web pages interactive and quickly became an essential part of front-end development. Over time, JavaScript expanded beyond the browser to power server-side applications, mobile development, desktop applications, and even IoT devices. As a result, the JavaScript ecosystem today is one of the largest and most mature in the software industry.
 
 TypeScript, introduced by Microsoft in 2012, is a superset of JavaScript. This means that any valid JavaScript code is also valid TypeScript code. However, TypeScript introduces new capabilities, most notably static typing, interfaces, generics, and advanced tooling integration. These features were designed to address challenges that developers often face in large-scale JavaScript projects, such as maintainability, scalability, and error detection. Over the past decade, TypeScript has rapidly grown in popularity and now plays a central role in many modern software projects.
 
-## The JavaScript Ecosystem
+- The JavaScript Ecosystem
+	The JavaScript ecosystem is vast, diverse, and well-established.
+	
+	1. **Maturity and Adoption**
+	    
+	2. **Libraries and Frameworks**
+	    
+	3. **Tooling and Build Systems**
+	    
+	4. **Flexibility**
+	    
+	5. **Community and Knowledge Resources**
 
-The JavaScript ecosystem is vast, diverse, and well-established.
+- The TypeScript Ecosystem
+	Although much younger than JavaScript, the TypeScript ecosystem has experienced exponential growth since its introduction.
+	
+	1. **Superset of JavaScript**
+	    
+	2. **Static Typing and Safety**
+	    
+	3. **Framework Adoption and Support**
+	    
+	4. **Tooling and Developer Experience**
+	    
+	5. **Enterprise and Team Development**
+	    
+	6. **Ecosystem Growth**
 
-1. **Maturity and Adoption**
-    
-2. **Libraries and Frameworks**
-    
-3. **Tooling and Build Systems**
-    
-4. **Flexibility**
-    
-5. **Community and Knowledge Resources**
-    
-
-## The TypeScript Ecosystem
-
-Although much younger than JavaScript, the TypeScript ecosystem has experienced exponential growth since its introduction.
-
-1. **Superset of JavaScript**
-    
-2. **Static Typing and Safety**
-    
-3. **Framework Adoption and Support**
-    
-4. **Tooling and Developer Experience**
-    
-5. **Enterprise and Team Development**
-    
-6. **Ecosystem Growth**
-    
-
-## Comparative View
+- Comparative View
 
 |Aspect|JavaScript Ecosystem|TypeScript Ecosystem|
 |---|---|---|
@@ -100,13 +95,10 @@ Although much younger than JavaScript, the TypeScript ecosystem has experienced 
 |**Project Suitability**|Best for small to medium applications and prototypes|Best for large-scale, enterprise-grade, team-based applications|
 |**Community Support**|Larger, older, more extensive|Smaller but growing rapidly, now widely adopted in professional development|
 
-## Conclusion
-
-The JavaScript ecosystem provides the foundation of modern web development. Its flexibility, massive library ecosystem, and global community make it indispensable for developers of all levels. However, this flexibility comes with challenges when applications scale in size and complexity.
-
-TypeScript extends this foundation by introducing type safety, structured development practices, and stronger tooling support. These enhancements make it particularly valuable for large and collaborative projects where maintainability, readability, and error prevention are critical.
-
-In summary, JavaScript and TypeScript are not competitors but complementary parts of the same ecosystem. JavaScript offers accessibility and flexibility, while TypeScript provides structure and scalability. Modern software teams increasingly adopt TypeScript as the default for professional projects, while still relying on the vast JavaScript ecosystem that underpins it.
+- Conclusion
+	The JavaScript ecosystem provides the foundation of modern web development. Its flexibility, massive library ecosystem, and global community make it indispensable for developers of all levels. However, this flexibility comes with challenges when applications scale in size and complexity.
+	TypeScript extends this foundation by introducing type safety, structured development practices, and stronger tooling support. These enhancements make it particularly valuable for large and collaborative projects where maintainability, readability, and error prevention are critical.
+	In summary, JavaScript and TypeScript are not competitors but complementary parts of the same ecosystem. JavaScript offers accessibility and flexibility, while TypeScript provides structure and scalability. Modern software teams increasingly adopt TypeScript as the default for professional projects, while still relying on the vast JavaScript ecosystem that underpins it.
 
 ## Configuring tsconfig.json
 Configuring the tsconfig.json file is a key step in working with TypeScript. This file acts like a rule book, defining how your TypeScript code should be compiled into JavaScript. In this session, we'll walk through its purpose and see how to adjust it to fit your project's needs. So what exactly is a tsconfig.json file? Firstly, it marks the root of a TypeScript project. This is how TypeScript knows where your project begins. Then, it defines the root files and compiler options used during compilation, giving you control over how the code is processed. 

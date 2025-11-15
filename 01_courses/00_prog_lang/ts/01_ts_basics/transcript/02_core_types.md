@@ -103,64 +103,63 @@ The second way to perform typecasting is by using angle brackets. This method i
 
 Typecasting is especially helpful when dealing with data from external sources, like an API. You might fetch data that you know will have a certain structure, but TypeScript doesn't know this until it receives the data. In this example, we define a user type with name and email properties. When we get a response from a fetchUser function, we can use asUser to tell TypeScript that the returned object matches the user type. This ensures that you can safely access properties like response.name and response.email without causing type errors, making your code more robust and predictable. Thank you for watching. I will see you in the next video.
 
----
 ## Type Casting Use Cases in TypeScript
 
 TypeScript brings static typing to JavaScript, helping developers catch errors at compile time rather than at runtime. However, there are situations where the compiler does not have enough information about the type of a value. In such cases, **type casting** (also called type assertions) is used to explicitly tell the compiler how to interpret a value.
 
 It is important to note that type casting does not change the actual value at runtime. It only affects how the compiler treats the value during development. This improves type safety, enables accurate autocompletion, and reduces potential type errors in complex code.
 
-## Common Use Cases for Type Casting
+- Common Use Cases for Type Casting
 
-### 1. Accessing DOM Elements
+1. Accessing DOM Elements
 
-When working with the Document Object Model (DOM), TypeScript often treats elements as a generic HTMLElement. Casting allows developers to access properties of more specific element types.
+	When working with the Document Object Model (DOM), TypeScript often treats elements as a generic HTMLElement. Casting allows developers to access properties of more specific element types.
+	
+	Example: const input = document.querySelector("#username") as HTMLInputElement; console.log(input.value);
+	
+	Here, casting tells TypeScript that the selected element is an input field, allowing safe access to the value property.
 
-Example: const input = document.querySelector("#username") as HTMLInputElement; console.log(input.value);
+2. Working with Union Types
 
-Here, casting tells TypeScript that the selected element is an input field, allowing safe access to the value property.
+	Union types allow variables to hold multiple types. Casting can be used when you are certain of the specific type at a given point.
+	
+	Example: function getLength(value: string | number) { if (typeof value === "string") { return (value as string).length; } return value; }
+	
+	In this example, casting confirms that value is a string, enabling access to the .length property.
 
-### 2. Working with Union Types
+3. Interoperating with Third-Party Libraries
 
-Union types allow variables to hold multiple types. Casting can be used when you are certain of the specific type at a given point.
+	Many JavaScript libraries either lack type definitions or have incomplete ones. Casting ensures that you can safely interact with data from such libraries.
+	
+	Example: declare const data: any; const user = data as { id: number; name: string }; console.log(user.name);
+	
+	Here, casting converts any into a structured object so that properties can be accessed more safely.
 
-Example: function getLength(value: string | number) { if (typeof value === "string") { return (value as string).length; } return value; }
+4. Migrating from JavaScript to TypeScript
 
-In this example, casting confirms that value is a string, enabling access to the .length property.
+	In projects transitioning from JavaScript, many variables may initially be typed as any. Casting provides a gradual way to introduce stronger typing.
+	
+	Example: let response: any = getApiResponse(); let result = response as { success: boolean; message: string };
+	
+	Casting allows legacy JavaScript code to adopt more structured typing without breaking compatibility.
 
-### 3. Interoperating with Third-Party Libraries
+5. Narrowing Complex Data Structures
 
-Many JavaScript libraries either lack type definitions or have incomplete ones. Casting ensures that you can safely interact with data from such libraries.
+	APIs often return loosely typed or generic data. Casting clarifies the expected structure of these responses.
+	
+	Example: type Product = { id: number; title: string; price: number }; const products = JSON.parse(apiResponse) as Product[]; products.forEach(p => console.log(p.title));
+	
+	This cast tells TypeScript to treat the parsed JSON as an array of Product objects.
 
-Example: declare const data: any; const user = data as { id: number; name: string }; console.log(user.name);
+6. Overriding Inferred Types
 
-Here, casting converts any into a structured object so that properties can be accessed more safely.
+	Sometimes TypeScript infers a type that is too broad. Casting allows developers to narrow the type.
+	
+	Example: let unknownValue: unknown = "Hello World"; let strLength = (unknownValue as string).length;
+	
+	Here, casting narrows from unknown to string, making it possible to access string-specific properties.
 
-### 4. Migrating from JavaScript to TypeScript
-
-In projects transitioning from JavaScript, many variables may initially be typed as any. Casting provides a gradual way to introduce stronger typing.
-
-Example: let response: any = getApiResponse(); let result = response as { success: boolean; message: string };
-
-Casting allows legacy JavaScript code to adopt more structured typing without breaking compatibility.
-
-### 5. Narrowing Complex Data Structures
-
-APIs often return loosely typed or generic data. Casting clarifies the expected structure of these responses.
-
-Example: type Product = { id: number; title: string; price: number }; const products = JSON.parse(apiResponse) as Product[]; products.forEach(p => console.log(p.title));
-
-This cast tells TypeScript to treat the parsed JSON as an array of Product objects.
-
-### 6. Overriding Inferred Types
-
-Sometimes TypeScript infers a type that is too broad. Casting allows developers to narrow the type.
-
-Example: let unknownValue: unknown = "Hello World"; let strLength = (unknownValue as string).length;
-
-Here, casting narrows from unknown to string, making it possible to access string-specific properties.
-
-## Comparison Table: When to Use Type Casting
+- Comparison Table: When to Use Type Casting
 
 |Use Case|Without Casting|With Casting|
 |---|---|---|
@@ -171,22 +170,19 @@ Here, casting narrows from unknown to string, making it possible to access strin
 |Parsing API responses|Treated as any or unknown|Enforces object structure at compile time|
 |Overriding inferred types|Too broad, limited type features|Explicitly narrowed to intended type|
 
-## Best Practices and Considerations
-
-- Type casting should be used only when you are certain about the type of a value. Incorrect casting may lead to runtime errors.
+- Best Practices and Considerations
+	- Type casting should be used only when you are certain about the type of a value. Incorrect casting may lead to runtime errors.
+	    
+	- Prefer **type guards** such as typeof or instanceof where possible. They provide safer narrowing without explicit casting.
+	    
+	- Avoid excessive use of any combined with casting, as it reduces the benefits of TypeScript’s type system.
+	    
+	- Casting is most useful in real-world cases involving DOM manipulation, third-party libraries, and complex API responses.
     
-- Prefer **type guards** such as typeof or instanceof where possible. They provide safer narrowing without explicit casting.
-    
-- Avoid excessive use of any combined with casting, as it reduces the benefits of TypeScript’s type system.
-    
-- Casting is most useful in real-world cases involving DOM manipulation, third-party libraries, and complex API responses.
-    
 
-## Conclusion
+- Conclusion
+	Type casting in TypeScript is a practical way to bridge gaps between dynamic and static typing. It is particularly valuable when interacting with the DOM, working with union types, integrating third-party libraries, parsing API responses, or migrating from JavaScript to TypeScript. Used responsibly, type casting enables safer code, better tooling support, and clearer communication of developer intent—without altering runtime behavior.
 
-Type casting in TypeScript is a practical way to bridge gaps between dynamic and static typing. It is particularly valuable when interacting with the DOM, working with union types, integrating third-party libraries, parsing API responses, or migrating from JavaScript to TypeScript. Used responsibly, type casting enables safer code, better tooling support, and clearer communication of developer intent—without altering runtime behavior.
-
----
 ## Objects and Their Working
 
 Think all TypeScript objects are created equal? Think again. In this video we'll dive into the tricky side of the TypeScript object type. You'll learn the crucial difference between a generic object and an object literal and how understanding this distinction can save you from a world of unexpected bugs and runtime errors. Now, let's explore the object type in TypeScript. In TypeScript, an object is a structured entity made up of key-value pairs. Each key is associated with a value that can be a primitive type, a function, an array, or even another object. 
