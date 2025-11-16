@@ -14,7 +14,6 @@ _(데코레이터 소개 및 설정 방법)_
 - 원래 코드 로직을 수정하지 않고 기능 확장
     
 - 코드를 더 깔끔하고 유지보수하기 쉽게 만듦
-    
 
 데코레이터는 **@ 기호로 적용**된다:
 
@@ -31,7 +30,6 @@ class User {}
 - 원래 메서드/프로퍼티/클래스는 변경하지 않고, 주변 동작만 추가한다.
     
 - Java/Spring의 AOP 느낌과 비슷한 구조.
-    
 
 > 즉, “코어 로직은 그대로 두고, 공통 규칙만 확장하는 방식”
 ### 3. 데코레이터 실행 시점
@@ -79,6 +77,8 @@ CI, 팀 환경에서도 동일한 설정을 유지해야 한다.
 - 유지보수성 향상
     
 - 메타데이터 기반 구조 설계 가능
+
+---
 ## TypeScript Decorators
 
 _(데코레이터 구체 설명 및 실전 활용)_
@@ -227,17 +227,12 @@ strict mode = **타입 안정성을 강화하는 옵션 묶음**
 - 타입이 숨어 들어가는 실수를 막아줌
     
 - 코드 품질 일관 유지
-### 5. 이 섹션 핵심 포인트 정리
 
-- 타입 추론은 자동 타입 도구
-    
-- strict mode는 오류 발생 가능성을 줄이는 보호막
-    
-- 둘의 조합은 “간결하면서 안전한 코드”를 만든
+---
 ## Advanced Features in TypeScript
 
 _(고급 타입 기능: Union, Intersection, Narrowing, Special Types)_
-### 1. 복잡한 데이터를 모델링하는 방법
+### 복잡한 데이터를 모델링하는 방법
 
 TypeScript는 다음 고급 기능을 제공해 복잡한 데이터 구조를 **유연하면서도 안전하게** 표현할 수 있다:
 
@@ -250,23 +245,23 @@ TypeScript는 다음 고급 기능을 제공해 복잡한 데이터 구조를 **
 - **Special Types (any, unknown, never, void)*
 
 이 기능들은 TypeScript 코드가 커지더라도 **정확성, 가독성, 유지보수성**을 유지하도록 도와준다.
-## 1) Union Types (유니온 타입)
+### 1) Union Types (유니온 타입)
 
-### 개념
+#### 개념
 
 Union 타입은 **하나의 값이 여러 타입 중 하나가 될 수 있음**을 의미한다.
 
 ```ts
 let value: string | number;
 ```
-### 장점
+#### 장점
 
 - 유연하면서도 타입 안정성 유지
     
 - 비즈니스 로직에서 다양한 입력을 자연스럽게 처리 가능
     
 - JS의 “너무 자유로운 타입”을 TS의 “안전한 자유”로 변환
-### 사용 시 패턴
+#### 사용 시 패턴
 
 → 꼭 narrowing(타입 좁히기)로 실제 타입을 확인해야 한다.
 
@@ -276,9 +271,9 @@ function print(v: string | number) {
   else console.log(v.toFixed(2));
 }
 ```
-## 2) Intersection Types (인터섹션 타입)
+### 2) Intersection Types (인터섹션 타입)
 
-### 개념
+#### 개념
 
 인터섹션은 **여러 타입을 하나로 결합**하여, 모든 조건을 만족해야 한다.
 
@@ -289,18 +284,18 @@ type Lead = Manager & Admin;
 ```
 
 Lead는 **두 역할 모두** 충족해야 한다.
-### 장점
+#### 장점
 
 - 컴포지션 기반 타입 설계
     
 - 역할(role) 조합, 기능 조합 패턴 작성에 유용
     
 - 객체 기반 도메인 모델링에 매우 강력
-## 3) Type Narrowing (타입 좁히기)
-### 개념
+### 3) Type Narrowing (타입 좁히기)
+#### 개념
 
 런타임 조건을 통해 유니온 타입을 **하위 타입으로 좁혀 안전하게 사용**하는 과정.
-### 주요 도구
+#### 주요 도구
 
 - `typeof`
     
@@ -318,7 +313,7 @@ function handle(v: string | number) {
   return v * 2;
 }
 ```
-### Narrowing의 핵심
+#### Narrowing의 핵심
 
 - TypeScript가 “조건문을 읽고”
     
@@ -328,11 +323,11 @@ function handle(v: string | number) {
     
 - 비즈니스 로직의 의도를 더 명확하게 표현
 
-## 4) Special Types
+### 4) Special Types
 
 _(any, unknown, never, void)_
 
-### any
+#### any
 
 - 모든 타입 허용
     
@@ -340,7 +335,7 @@ _(any, unknown, never, void)_
     
 - 사용 시 안전성 크게 떨어짐  
     → **최후의 수단**
-### unknown
+#### unknown
 
 - any보다 안전한 대안
     
@@ -350,22 +345,18 @@ _(any, unknown, never, void)_
 let data: unknown = "hello";
 if (typeof data === "string") data.toUpperCase();
 ```
-### never
+#### never
 
 - 절대 발생하지 않는 값
     
 - 예외 발생 함수, 무한 루프
     
 - exhaustive check에서 매우 유용
-### void
+#### void
 
 - 반환값 없는 함수
     
 - “side-effect 전용 함수” 명시
-## 요약
-
-유니온 / 인터섹션 / 타입 좁히기 / special types를 올바르게 사용하면  
-대규모 복잡한 시스템에서도 타입 안정성을 유지하면서 유연하게 모델링할 수 있다.
 
 ---
 ## Type System Features
@@ -373,7 +364,7 @@ if (typeof data === "string") data.toUpperCase();
 _(타입 시스템 구성요소 전체 요약)_
 
 이 섹션은 TypeScript 타입 시스템의 핵심 기능을 포함한 **최종 요약**이다.
-### 1. 타입 시스템의 목적
+### 타입 시스템의 목적
 
 - 더 안전한 코드
     
@@ -384,54 +375,42 @@ _(타입 시스템 구성요소 전체 요약)_
 - 런타임 오류를 컴파일 단계에서 차단
     
 - 협업 시 일관성 제공
-# 1) **Type Inference & Strict Checking**
+### 1) **Type Inference & Strict Checking**
 
-### 타입 추론
+#### 타입 추론
 
 - 변수/함수/반환 타입을 자동으로 유추
     
 - 불필요한 타입 선언 감소
     
 - 가독성 증가
-    
-
-### Strict Checking (엄격 모드)
+#### Strict Checking (엄격 모드)
 
 - strictNullChecks
     
 - noImplicitAny 등  
     → 실수와 버그를 조기에 차단
-    
 
 강한 타입 설정은 “품질 높은 코드”를 작성하도록 개발자를 유도한다.
+### 2) **Union & Intersection Types**
 
----
-
-# 2) **Union & Intersection Types**
-
-### Union
+#### Union
 
 - 하나의 값이 여러 옵션 중 하나
     
 - 다양한 데이터 패턴에 적합
     
 - narrowing과 함께 사용해야 안전
-    
-
-### Intersection
+#### Intersection
 
 - 여러 타입을 하나로 합성
     
 - 복합 역할/모델 설계에 최적
     
 - 컴포지션 기반 설계 철학과 잘 맞음
-    
+### 3) **Type Narrowing**
 
----
-
-# 3) **Type Narrowing**
-
-### Narrowing 적용 요소
+#### Narrowing 적용 요소
 
 - 조건문
     
@@ -440,14 +419,10 @@ _(타입 시스템 구성요소 전체 요약)_
 - in 연산자
     
 - 사용자 정의 type guard
-    
 
 TypeScript의 핵심 기능 중 하나로,  
 “실행 흐름을 분석해 타입을 자동으로 좁히는 기능”이다.
-
----
-
-# 4) **Special Types**
+### 4) **Special Types**
 
 |타입|의미|
 |---|---|
@@ -456,9 +431,7 @@ TypeScript의 핵심 기능 중 하나로,
 |never|절대 발생하지 않는 값|
 |void|값 반환 없음|
 
----
-
-# 5) **실전 적용**
+### 5) **실전 적용**
 
 - 다양한 입력 값을 처리해야 하는 API
     
@@ -467,7 +440,3 @@ TypeScript의 핵심 기능 중 하나로,
 - 비동기 흐름에서의 타입 안전성 강화
     
 - 외부 데이터(validation 필수) 처리
-    
-
-이 기능들을 적절히 조합하면,  
-코드가 커질수록 오히려 더 정교하고 유지보수하기 쉬운 구조를 만들 수 있다.

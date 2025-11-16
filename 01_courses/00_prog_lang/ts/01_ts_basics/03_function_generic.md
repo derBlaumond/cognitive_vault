@@ -63,7 +63,7 @@ function functionName(param1: type, param2: type): returnType {
 함수 선언을 숙달하는 것은 TypeScript 애플리케이션의 유지보수성과 예측 가능성을 높이는 핵심 스킬이다.
 
 ---
-# ## Types of Functions
+## Types of Functions
 _(함수의 종류: Named, Anonymous, Arrow Functions)_
 ### 1. Named Function (이름 있는 함수)
 
