@@ -19,20 +19,16 @@
 
 - 변수, 함수, 객체 등의 타입을 명시
 - ==런타임 오류를 컴파일 단계에서 찾아줌==
-
 #### (2) OOP 지원
 
 - 클래스, 인터페이스, 상속 등 명확한 구조 설계 가능
-
 #### (3) 인터페이스와 타입 별칭
 
 - 데이터 구조(Shape)를 명확히 정의
 - 팀 프로젝트에서 코드 이해도가 증가
-
 #### (4) JavaScript와 100% 호환
 
 - 기존 JS 라이브러리/프레임워크 그대로 사용 가능
-
 #### (5) 고급 개발자 도구 지원(IDE 친화적)
 
 - 자동완성(IntelliSense), 리팩토링, 타입 검사 등 강력한 개발 경험 제공
@@ -40,84 +36,35 @@
 요약: **JavaScript의 유연함 + 정적 타입 언어의 안정성을 결합한 현대적 개발 언어**
 
 ---
-
-## History and Evolution of TypeScript
-
-### 1. JavaScript의 시작
-
-- 1995년 Brendan Eich가 Netscape에서 개발
-- 초기 이름: Mocha → LiveScript → JavaScript로 변경
-- 웹에 상호작용성을 넣기 위해 10일 만에 개발
-- Netscape Navigator 2.0과 함께 배포되며 빠르게 확산
-
-하지만 JavaScript의 급성장과 함께 한계도 드러났음:
-
-- 대규모 프로젝트에서 유지보수 어려움
-- 정적 타입 부재로 오류가 늦게 발견됨
-- 복잡한 애플리케이션을 다루기 어려움
-
-### 2. TypeScript의 등장 (2012, Microsoft)
-
-- 창시자: Anders Hejlsberg (C#의 창시자)
-    
-- JS의 한계를 개선하기 위해 개발
-
-- 주요 특징:
-    
-    - 선택적 정적 타입
-    - 인터페이스
-    - 클래스 기반 OOP
-    - 기존 JS와 완전 호환
-- JS로 컴파일되기 때문에 브라우저/Node 환경에서 문제 없음
-
-### 3. TypeScript의 성장
-
-- Angular가 TS를 공식 언어로 채택하면서 급확산
-- 대규모 기업·오픈소스 커뮤니티에서 적극 채택
-- 개발자 설문조사에서 상위권 언어로 지속 선정
-- 대형 엔터프라이즈 프로젝트에서 기본 언어로 자리잡음
-
----
-
-## ## TypeScript vs. JavaScript
-
+## TypeScript vs. JavaScript
 ### 1. 주요 비교 포인트
-
 #### (1) 타입 시스템
 
 - **TS: 정적 타입** -- 컴파일 단계에서 오류 발견
 
 - **JS: 동적 타입** -- 런타임에서 오류 발생
-
-
 #### (2) 개발 도구(IDE) 지원
 
 - TS는 IntelliSense, 자동완성, 타입 기반 제안이 매우 강력
     
 - JS는 상대적으로 단순한 기능
-
 #### (3) 문법 및 기능
 
 - TS는 클래스 기반 OOP, 인터페이스, Enum 등 고급 기능 제공
     
 - JS는 전통적인 문법 기반
-
-
 ### 2. 코드 실행
 
 - TS는 JS로 컴파일해야 실행 가능
     
 - JS는 브라우저/Node가 바로 실행
-
-
 ### 3. 학습 난이도
 
 - JS → 쉽고 빠르게 시작 가능
     
 - TS → 타입 시스템을 이해해야 하므로 초기 진입 장벽 존재
 ---
-## ## TypeScript Ecosystem vs. JavaScript Ecosystem
-
+## TypeScript Ecosystem vs. JavaScript Ecosystem
 ### 1. JavaScript Ecosystem 특징
 
 - 20년 이상 웹의 중심 언어
@@ -139,9 +86,7 @@
     
 - 강력한 IDE 및 타입 지원으로 협업 효율 증가
 ---
-
 ## Configuring tsconfig.json
-
 ### tsconfig.json의 역할
 
 - 프로젝트 루트 설정
@@ -191,7 +136,6 @@
 - **strict**: 강력한 타입 검사
     
 - **esModuleInterop**: 모듈 호환성
-
 ### 2. 추가 옵션
 - **skipLibCheck**: .d.ts 타입 검사 제외
     

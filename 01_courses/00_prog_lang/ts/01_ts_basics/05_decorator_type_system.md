@@ -1,7 +1,6 @@
-# ## Introduction to Decorators and Enabling Them
+## Introduction to Decorators and Enabling Them
 
 _(데코레이터 소개 및 설정 방법)_
-
 ### 1. 데코레이터란 무엇인가?
 
 데코레이터는 **클래스, 메서드, 프로퍼티, 파라미터에 추가 기능을 부여하는 함수 기반 메타프로그래밍 도구**이다.
@@ -23,9 +22,6 @@ _(데코레이터 소개 및 설정 방법)_
 @Logger
 class User {}
 ```
-
----
-
 ### 2. 데코레이터가 특별한 이유
 
 - “추가 기능”을 **코드 외부**에 정의하고
@@ -38,24 +34,16 @@ class User {}
     
 
 > 즉, “코어 로직은 그대로 두고, 공통 규칙만 확장하는 방식”
-
----
-
 ### 3. 데코레이터 실행 시점
 
 > 데코레이터는 **런타임 이전, 클래스가 선언되는 시점(Design time)** 에 실행된다.
 
 즉:
-
 - 인스턴스 생성 시점이 아니라, “클래스가 정의될 때” 실행됨
     
 - 런타임 코드가 더 가벼워짐
     
 - 메타데이터 기반 구조를 미리 준비할 수 있음
-    
-
----
-
 ### 4. 데코레이터를 활성화하는 방법 (tsconfig.json)
 
 TypeScript에서 데코레이터는 **실험적 기능(Experimental Feature)**로  
@@ -70,9 +58,6 @@ TypeScript에서 데코레이터는 **실험적 기능(Experimental Feature)**�
 이 설정이 없으면 `@` 문법이 오류를 낸다.
 
 CI, 팀 환경에서도 동일한 설정을 유지해야 한다.
-
----
-
 ### 5. 데코레이터 종류 (4가지)
 
 |종류|설명|
@@ -83,9 +68,6 @@ CI, 팀 환경에서도 동일한 설정을 유지해야 한다.
 |**Parameter Decorator**|특정 파라미터에 규칙 적용|
 
 각 대상에 따라 적용범위와 기능이 달라지므로, 목적에 맞는 데코레이터를 사용해야 한다.
-
----
-
 ### 6. 데코레이터가 해결하는 문제들
 
 - 중복 코드 제거
@@ -97,14 +79,9 @@ CI, 팀 환경에서도 동일한 설정을 유지해야 한다.
 - 유지보수성 향상
     
 - 메타데이터 기반 구조 설계 가능
-    
-
----
-
-# ## TypeScript Decorators
+## TypeScript Decorators
 
 _(데코레이터 구체 설명 및 실전 활용)_
-
 ### 1. 데코레이터의 작동 방식
 
 > 데코레이터 = “타겟 요소를 감싸는(wrap) 함수”
@@ -116,10 +93,6 @@ _(데코레이터 구체 설명 및 실전 활용)_
 - 대상 요소(클래스/메서드/프로퍼티/파라미터)에 붙는다
     
 - 대상 요소를 수정하거나 대체하거나, 메타데이터를 추가할 수 있다
-    
-
----
-
 ### 2. 데코레이터 실전 활용 사례
 
 #### (1) **Class Decorator – 클래스 전체 기능 확장**
@@ -130,9 +103,6 @@ _(데코레이터 구체 설명 및 실전 활용)_
 @Register
 class User {}
 ```
-
----
-
 #### (2) **Method Decorator – 메서드 동작 확장 (로깅 등)**
 
 예: 메서드가 실행될 때마다 실행 전/후 동작을 삽입
@@ -151,10 +121,6 @@ class UserService {
 - 입력/출력 로깅
     
 - 권한 체크
-    
-
----
-
 #### (3) **Property Decorator – 프로퍼티 규칙 적용**
 
 예:
@@ -172,9 +138,6 @@ class Product {
   name: string;
 }
 ```
-
----
-
 #### (4) **Parameter Decorator – 파라미터 규칙 지정**
 
 예:
@@ -191,9 +154,6 @@ class Controller {
   create(@Body data: any) {}
 }
 ```
-
----
-
 ### 3. 데코레이터 적용 전후 비교
 
 |요구사항|데코레이터 없이|데코레이터 사용 시|
@@ -202,9 +162,6 @@ class Controller {
 |메서드 로깅|모든 메서드 안에 console.log 추가|@Log 하나로 해결|
 |property 검증|setter/getter 직접 작성|@Validate로 단일 적용|
 |기존 메서드 수정|비즈니스 코드에 로직 섞임|데코레이터로 외부 분리|
-
----
-
 ### 4. 데코레이터 사용 시 주의사항 / Best Practices
 
 - 남용하지 말 것  
@@ -215,14 +172,11 @@ class Controller {
 - 데코레이터는 **범용적이고 재사용 가능한 모듈**이어야 한다
     
 - 비즈니스 로직은 항상 클래스/메서드 본체에 유지
-    
 
 ---
-
-# ## Type Inference and Strict Type Checking
+## Type Inference and Strict Type Checking
 
 _(타입 추론 + 엄격 모드)_
-
 ### 1. 타입 추론(Type Inference)이란?
 
 타입스크립트 컴파일러가 **명시적 타입을 쓰지 않아도 자동으로 타입을 유추**하는 기능이다.
@@ -240,10 +194,6 @@ let a = 10;  // number로 자동 추론
 - 코드 간결
     
 - 타입 안정성 유지
-    
-
----
-
 ### 2. 타입 추론이 적용되는 곳
 
 - 변수 선언
@@ -253,10 +203,6 @@ let a = 10;  // number로 자동 추론
 - 반환 타입
     
 - 구조 분해 할당 등
-    
-
----
-
 ### 3. Strict Type Checking (엄격 타입 체크)
 
 strict mode = **타입 안정성을 강화하는 옵션 묶음**
@@ -270,9 +216,6 @@ strict mode = **타입 안정성을 강화하는 옵션 묶음**
 |**strictBindCallApply**|call/apply/bind 안전 검사|
 
 엄격 타입 검사는 “실행 전”에 오류를 찾아주므로 대규모 프로젝트에서 필수적이다.
-
----
-
 ### 4. strict mode의 효과
 
 - 더 안전한 코드
@@ -284,36 +227,16 @@ strict mode = **타입 안정성을 강화하는 옵션 묶음**
 - 타입이 숨어 들어가는 실수를 막아줌
     
 - 코드 품질 일관 유지
-    
-
----
-
 ### 5. 이 섹션 핵심 포인트 정리
 
 - 타입 추론은 자동 타입 도구
     
 - strict mode는 오류 발생 가능성을 줄이는 보호막
     
-- 둘의 조합은 “간결하면서 안전한 코드”를 만든다
-    
-
----
-
-여기까지가 **decorators + type inference** 부분 전체 정리야.  
-다음은 이 파일의 마지막 H2 섹션:
-
-- **Advanced Features in TypeScript**
-    
-- **Type System Features**
-    
-
-이 두 개만 마무리하면 파일 전체 끝이다.
-
----
-# ## Advanced Features in TypeScript
+- 둘의 조합은 “간결하면서 안전한 코드”를 만든
+## Advanced Features in TypeScript
 
 _(고급 타입 기능: Union, Intersection, Narrowing, Special Types)_
-
 ### 1. 복잡한 데이터를 모델링하는 방법
 
 TypeScript는 다음 고급 기능을 제공해 복잡한 데이터 구조를 **유연하면서도 안전하게** 표현할 수 있다:
@@ -324,13 +247,9 @@ TypeScript는 다음 고급 기능을 제공해 복잡한 데이터 구조를 **
     
 - **Type Narrowing (타입 좁히기)**
     
-- **Special Types (any, unknown, never, void)**
-    
+- **Special Types (any, unknown, never, void)*
 
 이 기능들은 TypeScript 코드가 커지더라도 **정확성, 가독성, 유지보수성**을 유지하도록 도와준다.
-
----
-
 ## 1) Union Types (유니온 타입)
 
 ### 개념
@@ -340,7 +259,6 @@ Union 타입은 **하나의 값이 여러 타입 중 하나가 될 수 있음**�
 ```ts
 let value: string | number;
 ```
-
 ### 장점
 
 - 유연하면서도 타입 안정성 유지
@@ -348,8 +266,6 @@ let value: string | number;
 - 비즈니스 로직에서 다양한 입력을 자연스럽게 처리 가능
     
 - JS의 “너무 자유로운 타입”을 TS의 “안전한 자유”로 변환
-    
-
 ### 사용 시 패턴
 
 → 꼭 narrowing(타입 좁히기)로 실제 타입을 확인해야 한다.
@@ -360,9 +276,6 @@ function print(v: string | number) {
   else console.log(v.toFixed(2));
 }
 ```
-
----
-
 ## 2) Intersection Types (인터섹션 타입)
 
 ### 개념
@@ -376,7 +289,6 @@ type Lead = Manager & Admin;
 ```
 
 Lead는 **두 역할 모두** 충족해야 한다.
-
 ### 장점
 
 - 컴포지션 기반 타입 설계
@@ -384,16 +296,10 @@ Lead는 **두 역할 모두** 충족해야 한다.
 - 역할(role) 조합, 기능 조합 패턴 작성에 유용
     
 - 객체 기반 도메인 모델링에 매우 강력
-    
-
----
-
 ## 3) Type Narrowing (타입 좁히기)
-
 ### 개념
 
 런타임 조건을 통해 유니온 타입을 **하위 타입으로 좁혀 안전하게 사용**하는 과정.
-
 ### 주요 도구
 
 - `typeof`
@@ -403,7 +309,6 @@ Lead는 **두 역할 모두** 충족해야 한다.
 - `"key" in obj`
     
 - 사용자 정의 type guard
-    
 
 예:
 
@@ -413,7 +318,6 @@ function handle(v: string | number) {
   return v * 2;
 }
 ```
-
 ### Narrowing의 핵심
 
 - TypeScript가 “조건문을 읽고”
@@ -423,9 +327,6 @@ function handle(v: string | number) {
 - 안전한 코드 작성 가능
     
 - 비즈니스 로직의 의도를 더 명확하게 표현
-    
-
----
 
 ## 4) Special Types
 
@@ -439,24 +340,16 @@ _(any, unknown, never, void)_
     
 - 사용 시 안전성 크게 떨어짐  
     → **최후의 수단**
-    
-
----
-
 ### unknown
 
 - any보다 안전한 대안
     
 - 사용할 때 **반드시 narrowing** 필요
-    
 
 ```ts
 let data: unknown = "hello";
 if (typeof data === "string") data.toUpperCase();
 ```
-
----
-
 ### never
 
 - 절대 발생하지 않는 값
@@ -464,34 +357,22 @@ if (typeof data === "string") data.toUpperCase();
 - 예외 발생 함수, 무한 루프
     
 - exhaustive check에서 매우 유용
-    
-
----
-
 ### void
 
 - 반환값 없는 함수
     
 - “side-effect 전용 함수” 명시
-    
-
----
-
 ## 요약
 
 유니온 / 인터섹션 / 타입 좁히기 / special types를 올바르게 사용하면  
 대규모 복잡한 시스템에서도 타입 안정성을 유지하면서 유연하게 모델링할 수 있다.
 
 ---
-
-# ## Type System Features
+## Type System Features
 
 _(타입 시스템 구성요소 전체 요약)_
 
 이 섹션은 TypeScript 타입 시스템의 핵심 기능을 포함한 **최종 요약**이다.
-
----
-
 ### 1. 타입 시스템의 목적
 
 - 더 안전한 코드
@@ -503,10 +384,6 @@ _(타입 시스템 구성요소 전체 요약)_
 - 런타임 오류를 컴파일 단계에서 차단
     
 - 협업 시 일관성 제공
-    
-
----
-
 # 1) **Type Inference & Strict Checking**
 
 ### 타입 추론
