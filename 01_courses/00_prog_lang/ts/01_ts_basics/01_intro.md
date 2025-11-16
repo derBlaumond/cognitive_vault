@@ -12,7 +12,6 @@
     - 코드의 안정성 증가
     - 오류를 실행 전에 사전에 발견
     - 대규모 프로젝트에서 유지보수 용이
-
 ### 2. TypeScript의 핵심 특징
 
 #### (1) 정적 타입
@@ -229,7 +228,6 @@ TypeScript 함수 → AST 트리 형태로 세부 노드 구성
 - 정적 분석, 리팩토링 자동화, IDE 기능의 기반
 ---
 ##  How Compiler Does Type Checking (타입 검사 과정)
-
 ### 1. 목적
 
 - 타입 오류를 실행 전에 미리 잡기
@@ -268,7 +266,6 @@ TypeScript 함수 → AST 트리 형태로 세부 노드 구성
 - 자동 완성, 타입 검사 제공
 ---
 ##  Type Inference
-
 ### 1. Type Inference란?
 
 - ==타입을 직접 지정하지 않아도 컴파일러가 추론==
@@ -277,12 +274,9 @@ TypeScript 함수 → AST 트리 형태로 세부 노드 구성
 ### 2. 적용 범위
 
 - 변수
-    
 - 표현식
-    
 - 함수 반환값
 ### 3. 추론 과정
 
 - 타입 체크 과정에서 자동 실행
-    
 - “Best Common Type”, Widening, Control Flow Analysis 등 다양한 전략 사용
