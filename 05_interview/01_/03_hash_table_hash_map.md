@@ -1,54 +1,47 @@
 - (코딩테스트 난이도에 가장 큰 영향력을 가진 단원)
 # 1) **핵심 개념을 가장 빠르게 이해하기**
 
-해시 테이블(= Map, Object, Dictionary)은 코딩테스트에서  
-**가장 많이 쓰이고, 난이도를 가장 크게 낮추는 도구**이다.
-
-핵심은 아래 3개만 기억하면 된다:
+해시 테이블(= Map, Object, Dictionary)은 코딩테스트에서 **가장 많이 쓰이고, 난이도를 가장 크게 낮추는 도구**이다.
 
 ---
-
-## **① 조회(lookup)가 평균 O(1)**
+## **① 조회(lookup)가 평균 $O(1)$**
 
 → 특정 값이 “있는지” 찾는 데 가장 빠르다.  
-→ 배열 반복보다 훨씬 빠르고 깔끔하다.
+→ `Map` 은 내부적으로 해시 함수(Hash Function)를 써서 데이터가 저장된 주소를 **즉시 계산**해냅니다. 그래서 반복문 없이 바로 찾아냅니다.
 
 ```ts
 const map = new Map<string, number>();
-map.set("a", 1);
-map.get("a"); // 1
-map.has("a"); // true
+map.set("a", 1); // Map 에 "a" key 를 가진 value 1 을 저장함.
+map.get("a"); // Output: 1
+map.has("a"); // Output: true
 ```
-
----
 
 ## **② “빈도수 세기” 문제의 거의 모든 정답이 Map**
 
-문자/숫자 등장 횟수를 세는 문제는 90%가 이 패턴이다.
+- 알고리즘 문제에서 **"가장 많이 등장한 단어는?", "숫자들의 개수를 세어라"** 같은 유형은 90% 이상 **Map**을 사용합니다.
 
 ```ts
 for (const x of arr) {
   count.set(x, (count.get(x) ?? 0) + 1);
+	// 1. count.get(x): "지금까지 x가 몇 번 나왔어?"라고 맵에 물어봅니다. 
+	// 2. ?? 0: "아직 한 번도 안 나왔으면(undefined) 0으로 쳐줘." 
+	// 3. + 1: 조회한 횟수(혹은 0)에 1을 더합니다. (이번에 나왔으니까!) 
+	// 4. count.set(x, ...): 계산된 새로운 횟수를 다시 x의 자리에 덮어씌워 저장합니다.
 }
 ```
 
----
-
 ## **③ Set: “존재 여부만 필요한 경우” 더 빠르고 깔끔**
-
+ 
 중복 체크 / 방문 여부 / 존재 검사
 
 ```ts
 const seen = new Set<number>();
-seen.add(5);
+seen.add(5); // 숫자 5를 집어넣지만, 이미 존재한다면 아무일도 일어나지 않는다.
 seen.has(5); // true
 ```
 
 ---
-
 # 2) **Typescript 실전 템플릿 (해시 문제에서 90% 쓰는 조합)**
-
----
 
 ## **① 빈도수 카운팅 Map**
 
@@ -60,18 +53,14 @@ for (const ch of s) {
 }
 ```
 
----
-
 ## **② Set으로 중복 체크**
 
 ```ts
 function containsDuplicate(nums: number[]): boolean {
-  const set = new Set(nums);
-  return set.size !== nums.length;
+  const set = new Set(nums); // list 를 Set 으로 변경시키면서 중복 삭제
+  return set.size !== nums.length; // boolean 으로 중복이 없다면 True
 }
 ```
-
----
 
 ## **③ Two Sum (가장 대표 해시 문제)**
 
@@ -88,8 +77,6 @@ function twoSum(nums: number[], target: number): number[] {
 }
 ```
 
----
-
 ## **④ 슬라이딩 윈도우 + 해시맵 조합**
 
 문자/부분 문자열 문제에서 자주 등장.
@@ -100,7 +87,6 @@ const count = new Map<string, number>();
 ```
 
 ---
-
 # 3) **간단 연습문제 2개**
 
 ## **연습문제 1 — 배열에서 각 숫자의 빈도수 구하기**

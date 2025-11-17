@@ -129,6 +129,12 @@ function reverseString(s: string): string {
 ## **② 아나그램 체크 (해시맵 기반)**
 
 - 두 문자열이 **같은 알파벳을 같은 개수만큼** 가지고 있는지 확인하는 로직입니다.
+
+#### `!` 위치의 차이
+1. 앞에 붙은 경우(!count.has(ch)): Logical NOT
+2. 뒤에 붙은 경우(==`count.get(ch)!`==): Non-null Assertion Operation
+	- 이 값은 절대 `null` 이나 `undefined` 가 아님은 보장한다!
+
 ```ts
 function isAnagram(a: string, b: string): boolean {
   if (a.length !== b.length) return false; // 가드레일: 길이가 다르면 불가능
@@ -182,6 +188,7 @@ function longestSubstring(s: string): number {
   let maxLen = 0;
 
   for (let right = 0; right < s.length; right++) {
+  
 	// 3. [조건 위배 감지] 
 	// 방금 들어오려는 글자(s[right])가 이미 Set 안에 있다면 중복입니다! 
 	// 중복이 사라질 때까지 왼쪽(left)을 줄여나갑니다.
