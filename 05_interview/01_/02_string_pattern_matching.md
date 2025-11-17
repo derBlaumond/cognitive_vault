@@ -108,6 +108,7 @@ for (let right = 0; right < s.length; right++) {
 
 ## **① 문자열 뒤집기**
 
+- 문자열 길이가 **홀수**일 때(예: "ABCDE", 길이 5), 가운데 글자는 교환될 필요가 없기 때문에 루프가 자연스럽게 종료됩니다.
 ```ts
 function reverseString(s: string): string {
   let arr = s.split(''); // 문자열 s 를 한 글자씩 쪼갠다.
