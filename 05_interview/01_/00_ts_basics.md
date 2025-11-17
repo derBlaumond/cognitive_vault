@@ -36,6 +36,9 @@ const freq: Record<string, number> = {};
 ```
 
 ### **Set / Map**
+- Set → “중복 체크”를 O(1)에 해결
+- Map → “문자나 숫자의 빈도수 기록·조회”에 사용  
+    배열 문제·문자열 문제·그래프 문제 등 어디에나 등장한다.
 
 ```ts
 const seen = new Set<number>();
@@ -49,13 +52,14 @@ const map = new Map<string, number>();
 # 2) **반복문 (코테에서 주로 쓰는 3개만)**
 
 ### **for-loop**
-
+- 인덱스를 써야 하는 문제에 최적.  
+	예: 두 포인터, 슬라이딩 윈도우에서 자주 사용.
 ```ts
 for (let i = 0; i < arr.length; i++) { }
 ```
 
-### **for...of (가장 코테 친화적)**
-
+### **==for...of== (가장 코테 친화적)**
+- 배열이나 문자열에서 값(value) 위주로 접근할 때 가장 깔끔하다.
 ```ts
 for (const x of arr) { }
 ```
@@ -69,7 +73,8 @@ for (const x of arr) { }
 # 3) **배열 메서드 (실전에서 90% 쓰는 것만)**
 
 ### **정렬**
-
+- TS의 sort는 기본이 문자열 정렬이라 반드시 비교 함수를 넣어야 한다.  
+	“정렬 + 투포인터” 패턴을 할 때 매번 쓰인다.
 ```ts
 nums.sort((a, b) => a - b);
 ```
