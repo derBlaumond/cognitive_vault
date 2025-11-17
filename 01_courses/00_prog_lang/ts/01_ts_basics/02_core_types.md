@@ -12,6 +12,7 @@ TypeScript의 주요 기본 타입들은 아래와 같다:
 - TS에서는 ==모든 숫자 타입이 **number**== 하나로 통합. 정수, 부동소수점 모두 포함
 ```ts
 let count: number = 10;
+let year: number = parseInt('2025');
 let price: number = 19.99;
 ```
 ### 3. string
@@ -29,11 +30,11 @@ let isActive: boolean = true;
 
 둘 다 “값이 없음”을 의미하지만 의미가 다름. TypeScript에서는 strictNullChecks 옵션 여부에 따라 동작이 달라진다.
 
-- **undefined**: ==값이 할당되지 않음==
-- **null**: 명시적으로 ==값이 없음==을 지정
+- **undefined**: ==값이 할당되지 않음==, 있던 없던 중요하지 않다. (직업이 있던 없던 상관없다.)
+- **null**: 명시적으로 =="없다"==를 명시 . (직업이 무직)
 ### 6. symbol
 
-- ES6에서 추가된 유일(unique)한 값. 주로 식별자(identifier)로 사용됨.
+- ES6에서 추가된 유일(==unique==)한 값. 주로 식별자(identifier)로 사용됨.
 
 ```ts
 const id: symbol = Symbol("id");
@@ -94,7 +95,7 @@ TS는 컴파일 단계에서 오류를 발견할 수 있어 개발 효율성을 
 
 ### 1. any 타입의 개념
 
-`any`는 **모든 타입을 허용**하는 특별한 타입이다.  
+`any`는 ==**모든 타입을 허용**==하는 특별한 타입이다.  
 TypeScript의 타입 시스템을 임시로 우회할 수 있는 "안전장치 해제" 타입이라고 보면 된다.
 
 ### 2. 특징
@@ -127,7 +128,7 @@ value = true;
 ## The “unknown” Type
 ### 1. unknown 타입 개요
 
-`unknown`은 any와 비슷해 보이지만 **타입 안전성을 보장하는 any**에 가까운 개념이다.
+`unknown`은 any와 비슷해 보이지만 ==**타입 안전성을 보장하는 any**==에 가까운 개념이다.
 ### 2. 특징
 
 - 모든 값을 담을 수 있음
