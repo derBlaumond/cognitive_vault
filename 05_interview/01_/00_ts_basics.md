@@ -30,11 +30,22 @@ const p: [number, number] = [2, 3];
 ```
 
 ### **빈도수/카운팅 맵**
+- **Record** 는 TS 에서 `key-value` 형태의 객체를 간단히 선언하는 문법이다.
 
 ```ts
 const freq: Record<string, number> = {};
+freq["a"] = 1;
+freq["b"] = 3;
 ```
-
+- 해석: `key:string` == `value:number` , 즉, `"문자"->"등장횟수"` 를 저장하는 해시맵과 동일한 구조
+- ==문자열/배열 문제에서 빈도수 체크==는 기본!
+```ts
+const freq: Record<string, number> = {};
+// "banana" 에서 각 알파벳 갯수를 세기
+for (const ch of "banana"){
+	freq[ch] = (freq[ch] ?? 0) + 1;
+}
+```
 ### **Set / Map**
 - Set → “중복 체크”를 O(1)에 해결
 - Map → “문자나 숫자의 빈도수 기록·조회”에 사용  
@@ -48,7 +59,6 @@ const map = new Map<string, number>();
 → JS 기반 테스트에서는 Object보다 **Map/Set**이 더 안정적이고 빠르다.
 
 ---
-
 # 2) **반복문 (코테에서 주로 쓰는 3개만)**
 
 ### **for-loop**
@@ -65,29 +75,38 @@ for (const x of arr) { }
 ```
 
 ### **for...in 은 사용 X**
-
 객체 key 순회용 → 배열은 비추천.
 
 ---
-
 # 3) **배열 메서드 (실전에서 90% 쓰는 것만)**
 
 ### **정렬**
 - TS의 sort는 기본이 문자열 정렬이라 반드시 비교 함수를 넣어야 한다.  
 	“정렬 + 투포인터” 패턴을 할 때 매번 쓰인다.
 ```ts
-nums.sort((a, b) => a - b);
+nums.sort((a, b) => a - b); // 오름차순 정렬하는 함수
+// 내림차순 정렬
+nums.sort((a, b) => b - a); 
 ```
-
+- JS/TS의 ==sort는 기본 정렬 기준이 **문자열 기준**==이다.따라서 숫자가 들어간 list 의 경우, 위 코드의 익명함수를 넣어서 정렬한다.
 ### **map / filter (가벼운 전처리)**
 
+1. map: “배열을 변형해서 새 배열로 만든다” (숫자 변형, 문자열 변형)
+2. filter: “조건에 맞는 것만 남긴다” (짝수만 남기기, 구간 필터링)
 ```ts
+const nums = [1, 2, 3];
 const doubled = nums.map(x => x * 2);
-const odds = nums.filter(x => x % 2 === 1);
+// doubled = [2, 4, 6]
+
+const nums = [1, 2, 3, 4];
+const even = nums.filter(x => x % 2 === 0);
+// even = [2, 4]
 ```
 
 ### reduce (코테에서는 거의 사용 안 함, prefix나 누적 합 정도만)
 
+- reduce: “배열을 하나의 값으로 합친다”
+	- 사용시점: 합계, 곱셈, max/min 찾기, 문자열 합치기
 ```ts
 const sum = nums.reduce((a, b) => a + b, 0);
 ```
