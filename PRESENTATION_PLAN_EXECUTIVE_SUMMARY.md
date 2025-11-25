@@ -1,98 +1,114 @@
 # DCP AI Expert Service - Presentation Plan
-## Executive Summary for Management Review
+## Executive Summary for Management Review (REVISED)
 
 ---
 
 ## Project Overview
 
-**DCP AI Expert Service** is a RAG-based AI service providing intelligent Q&A for SAP Digital Commerce Platform documentation. The system enables users to query business scenarios and technical documentation through a web interface, leveraging SAP HANA Cloud Vector Engine and SAP Generative AI Hub.
+**DCP AI Expert Service** is a web-based tool that enables users to ask questions about SAP Digital Commerce Platform (DCP) documentation and receive intelligent answers with source citations. The system uses multiple specialized AI agents to provide accurate, context-aware responses.
 
 **Key Value Propositions:**
-- Document-based intelligent Q&A for DCP scenarios
-- Configuration-driven scalability (add agents without code changes)
-- Enterprise-grade security (OAuth/OIDC authentication)
-- Native SAP ecosystem integration
+- **Simple Web Interface**: Users can ask questions and get answers instantly
+- **Multiple Specialized Agents**: Different agents for different knowledge domains
+- **Source Citations**: Answers include references to original documentation
+- **Self-Service Q&A**: Reduces need for support tickets and documentation searches
 
 ---
 
-## Presentation Objectives
+## Presentation Strategy: Demo-First Approach
 
-1. Demonstrate technical architecture and extensibility
-2. Highlight business value (improved productivity, reduced support burden)
-3. Showcase current capabilities (3 active agents, RAG pipeline)
-4. Outline future roadmap and expansion opportunities
+**Critical Change**: Based on senior feedback, the presentation has been revised from a **technical architecture presentation** to a **user-focused demonstration**.
 
----
-
-## Presentation Structure (20-25 minutes)
-
-### 1. Executive Overview (3 min)
-Problem statement → Solution → Key differentiators
-
-### 2. System Architecture (10-12 min)
-- **7-Layer Architecture**: User Interface → Web → Application → Agent → Processing → External Services → A2A Protocol
-- **Component Interactions**: How components work together
-- **Data Flow**: Step-by-step question-to-answer process with authentication and session management
-
-### 3. Key Features & Capabilities (5-6 min)
-- Multi-agent support (Wiki MD, AICore, GitOps)
-- RAG pipeline (document retrieval + LLM generation)
-- Enterprise features (OAuth authentication, session management, logging)
-- Configuration management (YAML-based)
-
-### 4. Technical Highlights (3-4 min)
-- Extensibility: Configuration-only agent addition
-- Modularity: Independent component operation
-- SAP integration: HANA Vector Engine + AI Hub
-
-### 5. Q&A (3-5 min)
+### **Key Principle**
+- **End users don't care** about backend technology (Flask, SocketIO, OAuth, etc.)
+- **Focus on capabilities**, not implementation
+- **Show, don't tell**: Demonstrate the tool in action
 
 ---
 
-## Key Talking Points
+## Presentation Structure (20 minutes)
 
-**Architecture Strengths:**
-- Configuration-driven design enables rapid agent addition
-- Layered architecture with clear separation of concerns
-- Dynamic agent loading based on YAML configuration
+### **Part 1: Brief Introduction (3-4 slides, ~10 minutes)**
 
-**Business Impact:**
-- Faster document access (seconds vs. minutes)
-- Self-service documentation queries
-- Reduced support burden
+**Content:**
+- What the tool does (web-based Q&A for DCP documentation)
+- Available agents overview (Wiki MD, PDF, GitOps, AICore)
+- Future vision (workspace, history picks)
 
-**Technical Excellence:**
-- Enterprise security (OAuth/OIDC, role-based access)
-- SAP native integration
-- Real-time communication (SocketIO)
+**Key Message**: "We have a tool, we have a direction - use AI wherever possible. We're combining Wiki and other agents as sources for intelligent Q&A."
+
+### **Part 2: Live Demo (~10 minutes) - MAIN FOCUS**
+
+**Demo Flow:**
+1. Show web UI interface
+2. Demonstrate agent selection
+3. Ask pre-tested questions that give good answers
+4. Show answers with source citations
+5. Demonstrate different agents for different question types
+
+**Critical Requirements:**
+- Questions must be **pre-tested** and give **useful answers**
+- Mix of short and long questions
+- Real-world scenarios (e.g., "shop is down, what shall I do?")
+- **DO NOT** mention technical details (Flask, SocketIO, Streamlit, etc.)
 
 ---
 
-## Current Status
+## What NOT to Present
 
-**Active Agents:** 3 (Wiki MD, AICore, GitOps)  
-**Infrastructure:** Flask web app, OAuth authentication, session management, SocketIO  
-**Documentation:** Complete (architecture, technical details, presentation slides)
+### **Excluded Content:**
+- ❌ Technical architecture details
+- ❌ Backend implementation (Flask, SocketIO, OAuth)
+- ❌ Code structure or modules
+- ❌ Streamlit migration story
+- ❌ Database architecture
+- ❌ Configuration files
+
+### **Reason:**
+High-level users only see the UI and care about **what they can do**, not **how it's built**.
+
+---
+
+## Key Success Factors
+
+1. **Demo Quality**: Pre-tested questions that give good answers
+2. **User Focus**: Always think from end-user perspective
+3. **Simplicity**: Avoid technical jargon
+4. **Practical Value**: Show real-world use cases
 
 ---
 
 ## Preparation Status
 
-✅ Codebase analysis complete  
-✅ Architecture documentation ready  
-✅ Presentation slides prepared (36 slides)  
-🔄 Visual materials finalization  
-🔄 Demo scenario preparation
+✅ Presentation strategy revised per senior feedback  
+🔄 PowerPoint creation (3-4 slides only)  
+🔄 Question preparation (need to collect and test good questions)  
+🔄 Agent familiarity (understand each agent from user perspective)  
+🔄 Demo practice (practice flow with pre-tested questions)
 
 ---
 
-## Recommendations
+## Next Steps
 
-- **Visual-first approach** with progressive disclosure
-- **Real-world examples** and use cases
-- **Audience adaptation** (technical vs. business focus)
-- **Modular structure** for flexible timing
+1. **Immediate**: Schedule meeting with senior to understand agent specialties
+2. **Question Collection**: Gather realistic questions from team members
+3. **Question Testing**: Test questions to ensure they give good answers
+4. **PowerPoint Creation**: Create minimal 3-4 slide introduction
+5. **Demo Practice**: Practice demo flow
 
 ---
 
-**Status:** Ready for Review | **Prepared by:** [Your Name] | **Date:** [Current Date]
+## Revised Approach Summary
+
+**Old Approach**: Technical presentation (20+ slides, architecture focus)  
+**New Approach**: Brief intro + Live demo (3-4 slides, user-focused)
+
+**Key Shift:**
+- From "How it's built" → To "What you can do"
+- From "Technical details" → To "Practical value"
+- From "Architecture explanation" → To "Tool demonstration"
+
+---
+
+**Status**: Revised per senior feedback | **Focus**: User demonstration, not technical presentation  
+**Prepared by**: [Your Name] | **Date**: [Current Date]
