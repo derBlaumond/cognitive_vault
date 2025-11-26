@@ -5,20 +5,26 @@
 
 ## Part 1: PowerPoint Introduction (~10 minutes)
 
-### [Slide 1: Title & Purpose] (2 minutes)
+### [Slide 1: Agenda] (1 minute)
 
 **Script:**
-"Good morning/afternoon. Today, I'm presenting the DCP AI Expert Service. This is a web-based tool that enables you to ask questions about SAP Digital Commerce Platform, or DCP, documentation and receive intelligent answers.
+"Good morning/afternoon. Today, I'm presenting the DCP AI Expert Service.
 
-The purpose of this tool is to quickly search through complex DCP documentation and provide accurate answers with source citations. Instead of spending time searching through documents, you can simply ask a question.
+Let me start with the agenda. Today's presentation consists of three parts:
 
-This is what we're introducing today - an intelligent Q&A tool for DCP documentation."
+**First, Introduction** - I'll explain what DCP AI Expert Service is and provide an overview of available agents.
 
-**Key Message:** "Intelligent Q&A tool for DCP documentation"
+**Second, Live Demonstration** - I'll show you real Q&A examples using the actual web interface.
+
+**Third, Discussion** - We'll have a Q&A session where you can ask any questions.
+
+Let's begin with the introduction."
+
+**Key Message:** "Three-part presentation: Introduction, Live Demo, Discussion"
 
 ---
 
-### [Slide 2: What It Does] (3 minutes)
+### [Slide 2: What It Does] (2 minutes)
 
 **Script:**
 "So, what can this tool do?
@@ -94,7 +100,36 @@ This is NOT a document-based agent. It's a general-purpose AI assistant that use
 
 ---
 
-### [Slide 4: Future Vision: Multi-Agent System] (1-2 minutes)
+### [Slide 4: System Architecture] (2 minutes)
+
+**Script:**
+"Now, let me show you how the system works at a high level. [Point to diagram]
+
+[Note: This slide may be explained by Boris or another team member]
+
+This diagram shows the technical architecture of the DCP AI Expert Service. As you can see, the system consists of several layers:
+
+- **Web UI** - This is what users interact with. It provides real-time streaming responses, multi-agent selection, and integrated analysis mode.
+
+- **Agent Router & Task Manager** - This component receives requests from the UI and routes them to the appropriate specialized agents.
+
+- **Specialized Agents** - We have four active agents: Wiki MD, Wiki PDF, GitOps, and AI Core Service. Each agent handles different types of questions.
+
+- **Vector Retrieval Layer** - This handles document processing, embedding, similarity search, and context augmentation.
+
+- **SAP HANA Cloud Vector Engine** - This stores document embeddings and performs semantic search and retrieval.
+
+- **SAP Generative AI Hub** - This provides the underlying AI models for generating answers and creating embeddings.
+
+The flow is straightforward: User asks a question → Agent Router selects the right agent → Agent retrieves relevant documents → AI generates an answer → Answer is streamed back to the user.
+
+This architecture enables fast, accurate answers with source citations."
+
+**Key Message:** "High-level architecture showing how the system works"
+
+---
+
+### [Slide 5: Future Vision: Multi-Agent System] (1-2 minutes)
 
 **Script:**
 "Now, let me show you our future vision. [Point to diagram]
@@ -146,71 +181,119 @@ Each agent specializes in different areas. However, **the Wiki MD Agent is our p
 
 ---
 
-### [3. Question & Answer Demonstrations] (8 minutes)
+### [3. Question & Answer Demonstrations] (8-9 minutes)
 
-#### Question 1: Short, Practical Question (2 minutes)
+#### Question 1: Operational/Configuration Question (1-2 minutes)
 
 **Script:**
 "For this demonstration, I'll be using the **Wiki MD Agent** - our primary agent for most questions. [Show Wiki MD Agent is selected]
 
-The first question is a practical scenario: 'shop is down, what shall I do?' [Enter question]
+The first question is about operational tasks: 'how do I update jenkins certificate?' [Enter question]
 
-This is a situation that could actually happen. Someone is asking what to do when the shop is down.
+This is a practical question that operations or DevOps teams might ask when they need to update certificates.
 
 [Wait for answer]
 
-As you can see, the Wiki MD Agent provided support contacts, troubleshooting steps, and a troubleshooting guide. And below the answer, there are source citations. [Show source citations]
+As you can see, the Wiki MD Agent provided step-by-step instructions for updating the Jenkins certificate. Notice how it includes specific steps, configuration details, and source citations below the answer. [Show source citations]
 
-This is the value of this tool. You can get quick, practical answers with source citations using our primary Wiki MD Agent."
+This demonstrates that our Wiki MD Agent can handle operational and configuration questions effectively, providing actionable guidance with reliable sources."
 
-**Key Message:** "Practical and actionable answers with source citations"
+**Key Message:** "Operational questions answered with actionable steps and source citations"
 
 ---
 
-#### Question 2: Long Technical Documentation Question (3 minutes)
+#### Question 2: Access Permission Question (1 minute)
 
 **Script:**
 "Again, I'm using the **Wiki MD Agent** - our primary agent. [Show Wiki MD Agent is still selected]
 
-Now let's try a more complex technical question: 'How does the DCP checkout process work? Please explain step by step.' [Enter question]
+Now let's ask about access permissions: 'what CAM role access into kyma?' [Enter question]
 
-This is a longer question that requires a detailed answer. This is exactly the type of question where Wiki MD Agent excels.
-
-[Wait for answer]
-
-As you can see, the Wiki MD Agent provided a detailed process explanation. It includes step-by-step descriptions, related APIs, and source citations. [Scroll through answer]
-
-This demonstrates the strength of our primary Wiki MD Agent. It can explain complex technical documentation in an easy-to-understand way, which is why it's our go-to agent for most questions."
-
-**Key Message:** "Complex technical questions answered in detail"
-
----
-
-#### Question 3: Error Handling Demonstration (2 minutes)
-
-**Script:**
-"Now let me show you how the system handles incorrect input. Let me enter meaningless input: 'asdfghjkl' [Enter question]
+This is an important question about who can access Kyma and what roles are required. This type of information is crucial for users who need to understand access requirements.
 
 [Wait for answer]
 
-As you can see, the system indicates that it cannot understand the question and requests a more specific question or suggests similar questions. This shows that the system is trying to help the user.
+As you can see, the Wiki MD Agent provided information about CAM roles and Kyma access. It explains which roles are needed and how to get access. Notice the source citations - you can click on these links to see the original documentation. [Show source citations and mention clickable links]
 
-This is error handling. The system appropriately handles incorrect input."
+This is another example of how Wiki MD Agent helps users quickly find access and permission information."
 
-**Key Message:** "Incorrect input is handled appropriately"
+**Key Message:** "Access and permission questions answered clearly with source links"
 
 ---
 
-#### Question 4: Conversation History (1 minute)
+#### Question 3: Problem-Solving/Troubleshooting Question (2-3 minutes)
 
 **Script:**
-"Finally, let me show you the conversation history. [Scroll through history]
+"Let me show you how the Wiki MD Agent handles troubleshooting questions. [Show Wiki MD Agent is still selected]
 
-As you can see, all questions and answers are saved in the history. You can refer to previous conversations or review answers again.
+This is a real-world scenario: 'It seems we do have an issue with the pricing service connecting to CPQ. Please suggest what to do and whom to contact?' [Enter question]
 
-This is another advantage of this tool. It maintains conversation context."
+This is exactly the type of question that support teams or developers face when troubleshooting integration issues. They need both technical guidance and contact information.
 
-**Key Message:** "Conversation history maintains context"
+[Wait for answer]
+
+Excellent! The Wiki MD Agent provided a comprehensive answer including troubleshooting steps, potential solutions, and contact information. Notice how it breaks down the problem systematically and provides actionable next steps. [Scroll through answer]
+
+Below the answer, you can see multiple source citations. These are clickable links that take you directly to the original documentation pages. [Show source citations and demonstrate clickable links]
+
+This demonstrates the real value of this tool - when you have an urgent issue, you can quickly get both technical guidance and contact information, all with reliable source citations."
+
+**Key Message:** "Troubleshooting questions answered with solutions, contacts, and source citations"
+
+---
+
+#### Question 4: Concept Comparison Question (2 minutes)
+
+**Script:**
+"Now let's try a conceptual question that requires comparing two different concepts. [Show Wiki MD Agent is still selected]
+
+The question is: 'Explain the difference between upsell and net new ordering on DCP' [Enter question]
+
+This is a business concept question that helps users understand the distinction between two important ordering types in DCP.
+
+[Wait for answer]
+
+Perfect! The Wiki MD Agent provided a clear comparison between upsell and net new ordering. Notice how it explains each concept separately and then highlights the key differences. [Scroll through answer]
+
+This type of conceptual explanation is valuable for users who need to understand business logic and process differences. The answer includes examples and use cases, making it easy to understand. [Show source citations]
+
+This demonstrates that Wiki MD Agent excels at explaining complex concepts in a clear and structured way."
+
+**Key Message:** "Conceptual questions answered with clear comparisons and examples"
+
+---
+
+#### Question 5: Process Documentation Question (2 minutes)
+
+**Script:**
+"Finally, let me show you how Wiki MD Agent handles process documentation questions. [Show Wiki MD Agent is still selected]
+
+This question asks about a specific process: 'Describe TDD ordering process' [Enter question]
+
+Process questions require step-by-step explanations, which is exactly what Wiki MD Agent is designed to handle.
+
+[Wait for answer]
+
+Excellent! The Wiki MD Agent provided a detailed step-by-step explanation of the TDD ordering process. Notice how it breaks down the process into clear stages, explains each step, and includes related information like APIs or configuration requirements. [Scroll through answer]
+
+The answer is well-structured and easy to follow, which is crucial when learning a new process. And as always, source citations are provided so you can verify the information or get more details. [Show source citations]
+
+This demonstrates the strength of Wiki MD Agent in explaining complex processes in an organized and understandable way."
+
+**Key Message:** "Process questions answered with detailed step-by-step explanations"
+
+---
+
+#### Conversation History (30 seconds - optional)
+
+**Script:**
+"Before we wrap up the demo, let me quickly show you the conversation history. [Scroll through history]
+
+As you can see, all five questions and their answers are saved in the history. You can refer back to any previous question or review answers again. This is particularly useful when you're working on related topics and want to reference earlier information.
+
+This conversation history feature helps maintain context across multiple questions."
+
+**Key Message:** "Conversation history maintains context across questions"
 
 ---
 
@@ -236,18 +319,21 @@ That's the entire presentation. If you have any questions, please feel free to a
 ## Time Management Guide
 
 - **Part 1 (PowerPoint):** 10 minutes
-  - Slide 1: 2 minutes
-  - Slide 2: 3 minutes
-  - Slide 3: 4 minutes
-  - Slide 4: 1 minute
+  - Slide 1 (Agenda): 1 minute
+  - Slide 2 (What It Does): 2 minutes
+  - Slide 3 (Available Agents): 3 minutes
+  - Slide 4 (System Architecture): 2 minutes (may be explained by Boris or other team member)
+  - Slide 5 (Future Vision): 2 minutes
 
 - **Part 2 (Live Demo):** 10 minutes
   - Interface Overview: 1 minute
   - Agent Selection: 1 minute
-  - Question 1 (Short): 2 minutes
-  - Question 2 (Long): 3 minutes
-  - Question 3 (Error Handling): 2 minutes
-  - Conversation History: 1 minute
+  - Question 1 (Jenkins certificate): 1-2 minutes
+  - Question 2 (CAM role/Kyma access): 1 minute
+  - Question 3 (Pricing service/CPQ issue): 2-3 minutes
+  - Question 4 (Upsell vs net new): 2 minutes
+  - Question 5 (TDD ordering process): 2 minutes
+  - Conversation History: 30 seconds (optional)
 
 - **Closing:** 1 minute
 
@@ -257,10 +343,11 @@ That's the entire presentation. If you have any questions, please feel free to a
 
 ## Important Notes
 
-- ❌ DO NOT mention: Flask, SocketIO, OAuth, or other technical stacks
-- ❌ DO NOT explain backend architecture
+- ❌ DO NOT mention: Flask, SocketIO, OAuth, or other technical stacks (except in System Architecture slide if necessary)
+- ❌ DO NOT explain backend architecture in detail (System Architecture slide shows high-level flow only)
 - ❌ DO NOT mention Streamlit
 - ✅ Focus only on what users see
 - ✅ Focus only on "what you can do"
 - ✅ Emphasize source citations
-
+- ✅ System Architecture slide: Keep it high-level, focus on flow and components, not implementation details
+- ✅ Live Demo: All questions use Wiki MD Agent to demonstrate it as the primary agent
