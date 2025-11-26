@@ -37,31 +37,62 @@ In summary, it's web-based, provides specialized agents, and delivers AI answers
 
 ### [Slide 3: Available Agents Overview] (4 minutes)
 
-**Script:**
-"Currently, four agents are active.
+**Script:** "Currently, four agents are active.
 
-First, the **Wiki MD Agent**. This is the best agent for most DCP questions. It's Markdown-based and uses pages exported from Confluence. It's recommended for general questions about DCP processes, APIs, and configuration.
+1. **Wiki MD Agent**
 
-Second, the **PDF Agent**. This is used for questions about PDF-based documentation. It provides the same capabilities as Wiki MD but uses PDF format as the source.
+	This agent uses Markdown files exported from Confluence. It contains the **same DCP documentation content** as the PDF Agent, but in a more compact format.
+	
+	**Key advantages of MD format:**
+	
+	- **Much more compact**: Contains only page content without menus, labels, or edit entries
+	
+	- **Source links included**: Direct links to original pages for easy reference
+	
+	- **Cleaner search results**: No unnecessary UI elements
 
-Third, the **GitOps Agent**. This is used for questions about GitOps, deployment, and configuration files. Note that this is currently a test agent and may be removed in the future.
+	**Purpose:** Both MD and PDF agents are testing which format provides better retrieval results for daily use. Currently, MD format is preferred because it's more compact and includes source links.
+	
+	**When to use it:** For general DCP questions, technical documentation queries, questions about processes, APIs, or configuration. This should be your first choice for most questions.
+	
+	**Example questions:** 'How does the DCP checkout process work?', 'What are the configuration service APIs?', 'Explain the order fulfillment workflow.'
 
-Fourth, the **AICore Agent**. This is a general-purpose AI assistant, not for document-based Q&A. It's used automatically for tasks like typo correction.
-
-**Recommendation:** For most questions, use the **Wiki MD Agent**. It provides the best results."
-
-**Key Message:** "Wiki MD Agent is optimal for most questions"
+2. **Wiki PDF Agent**
+	This agent uses PDF format for the **same content** as Wiki MD. Both agents are testing which format provides better retrieval results.
+	
+	**Purpose:** To compare PDF format against Markdown format and determine which provides better search results for daily use. The agents are there to check the reasonability of retrieval data.
+		
+	**Current status:** PDF is less compact than MD and may include menus and labels. MD format is currently preferred, but PDF Agent remains active for testing purposes.
+	
+	**Note:** Both PDF and MD have the same content, but MD is much more compact, has only the page contents without all the menus, labels and edit entries. Also, MD has source links.
+	  
+2. **GitOps Workload Agent**
+	This agent specializes in GitOps, deployment, and configuration files. It can handle multiple file formats including YAML, JSON, Python scripts, shell scripts, and configuration files.
+	
+	**When to use it:** For questions about GitOps workflows, deployment processes, YAML or JSON configuration options, or when you need information about configuration files and scripts.
+	
+	**Example questions:** 'How do I configure GitOps deployment?', 'What are the YAML configuration options?', 'Explain the deployment workflow.'
+	
+	**Note:** This is currently a test agent and may be removed in the future.
+	
+2. **AICore Agent** - this is different from the others
+	This is NOT a document-based agent. It's a general-purpose AI assistant that uses direct LLM access without document retrieval.
+	
+	**When to use it:** For general AI questions that don't require DCP documentation, or for typo correction - which happens automatically when you use other agents.
+	
+	**Important:** Do NOT use AICore for document-based Q&A. It won't provide source citations because it doesn't search through documents. For any DCP documentation questions, use one of the RAG agents instead.
 
 ---
 
 ### [Slide 4: Future Vision] (1 minute)
 
-**Script:**
-"For future plans, we're working on a workspace to combine multiple fragments, history picks functionality, and enhanced AI capabilities.
+**First, Workspace functionality.** This will allow you to combine multiple fragments from different answers, integrate different sources, and enhance collaboration. You'll be able to build comprehensive answers by combining information from various responses.
 
-The key message is this: We have a tool, and we have a direction. We're using AI wherever possible and combining Wiki and other agents as sources for intelligent Q&A."
+**Second, History Selection.** You'll be able to access your conversation history, reference previous answers, and get context-aware responses. This means the system will remember your previous questions and provide more relevant answers based on your conversation context.
 
-**Key Message:** "We have a tool and a direction - expanding AI usage"
+**Third, Enhanced AI Capabilities.** We're working on improved accuracy, better understanding of questions, and smarter responses. The AI will become more intelligent in interpreting your questions and providing comprehensive answers.
+
+The key message is this: We have a tool, and we have a direction. We're using AI wherever possible and combining Wiki and other agents as sources for intelligent Q&A. These enhancements will make the tool even more powerful and user-friendly."
 
 ---
 
@@ -75,11 +106,6 @@ The key message is this: We have a tool, and we have a direction. We're using AI
 As you can see, this is what end users see. It's very simple. After logging in, there's an input box where you can ask questions, and a dropdown to select agents.
 
 No complex setup or technical knowledge is required. Simply enter your question, select an agent, and receive an answer."
-
-**Key Message:** "Simple interface - no technical knowledge required"
-
----
-
 ### [2. Agent Selection Demo] (1 minute)
 
 **Script:**
@@ -91,7 +117,6 @@ Each agent specializes in different areas. For example, you can use the Wiki MD 
 
 **Key Message:** "Different agents specialize in different areas"
 
----
 
 ### [3. Question & Answer Demonstrations] (8 minutes)
 
@@ -170,37 +195,3 @@ This is another advantage of this tool. It maintains conversation context."
 That's the entire presentation. If you have any questions, please feel free to ask."
 
 **Key Message:** "Simple, fast, and reliable DCP documentation Q&A tool"
-
----
-
-## Time Management Guide
-
-- **Part 1 (PowerPoint):** 10 minutes
-  - Slide 1: 2 minutes
-  - Slide 2: 3 minutes
-  - Slide 3: 4 minutes
-  - Slide 4: 1 minute
-
-- **Part 2 (Live Demo):** 10 minutes
-  - Interface Overview: 1 minute
-  - Agent Selection: 1 minute
-  - Question 1 (Short): 2 minutes
-  - Question 2 (Long): 3 minutes
-  - Question 3 (Error Handling): 2 minutes
-  - Conversation History: 1 minute
-
-- **Closing:** 1 minute
-
-**Total Time: ~21 minutes** (With Q&A: ~23-25 minutes)
-
----
-
-## Important Notes
-
-- ❌ DO NOT mention: Flask, SocketIO, OAuth, or other technical stacks
-- ❌ DO NOT explain backend architecture
-- ❌ DO NOT mention Streamlit
-- ✅ Focus only on what users see
-- ✅ Focus only on "what you can do"
-- ✅ Emphasize source citations
-
