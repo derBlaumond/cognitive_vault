@@ -3,7 +3,7 @@
 
 ---
 how do I update jenkins certificate?## Part 1: PowerPoint 소개 (약 10분)
-
+what CAM role access into kyma?
 ### [슬라이드 1: 제목 및 목적] (2분)
 
 **스크립트:**
