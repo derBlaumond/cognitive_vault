@@ -2,8 +2,7 @@
 ## 총 소요 시간: 약 20분
 
 ---
-
-## Part 1: PowerPoint 소개 (약 10분)
+how do I update jenkins certificate?## Part 1: PowerPoint 소개 (약 10분)
 
 ### [슬라이드 1: 제목 및 목적] (2분)
 
