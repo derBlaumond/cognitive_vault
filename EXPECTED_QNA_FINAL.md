@@ -1,5 +1,11 @@
 # 예상 Q&A 리스트 (최종)
 ## 발표 스크립트 및 슬라이드 분석 기반
+Finally, I'd like to share one personal update.
+I completed my undergraduate studies this week, and my working-student contract ends as scheduled on November 30th.
+And recently, I received a formal full-time offer from the SAP AI Core team.
+I'll be taking a break from December to February, and then returning to SAP on March 1st of next year.
+
+Since today is the last wrap-up session, I wanted to share this in person.
 
 ---
 

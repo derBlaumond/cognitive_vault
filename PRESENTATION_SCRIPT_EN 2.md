@@ -287,10 +287,3 @@ This conversation history feature helps maintain context across multiple questio
 That's the entire presentation. If you have any questions, please feel free to ask."
 
 ---
-
-Finally, I'd like to share one personal update.
-I completed my undergraduate studies this week, and my working-student contract ends as scheduled on November 30th.
-And recently, I received a formal full-time offer from the SAP AI Core team.
-I'll be taking a break from December to February, and then returning to SAP on March 1st of next year.
-
-Since today is the last wrap-up session, I wanted to share this in person.
