@@ -8,7 +8,7 @@
 ### [Slide 1: Agenda] (1 minute)
 
 **Script:**
-"Good morning/afternoon. Today, I'm presenting the DCP AI Expert Service.
+"Good afternoon. Today, I'm presenting the DCP AI Expert Service.
 
 Let me start with the agenda. Today's presentation consists of three parts:
 
@@ -20,13 +20,10 @@ Let me start with the agenda. Today's presentation consists of three parts:
 
 Let's begin with the introduction."
 
-**Key Message:** "Three-part presentation: Introduction, Live Demo, Discussion"
-
 ---
 
 ### [Slide 2: What It Does] (2 minutes)
 
-**Script:**
 "So, what can this tool do?
 
 First, you can ask questions about DCP through a web-based interface. No complex setup or installation is required. All you need is a browser.
@@ -36,8 +33,6 @@ Second, multiple specialized agents are available. We have a primary agent - the
 Third, you receive AI-powered answers, and all answers include source citations. This means you can see which document the answer came from, ensuring reliability.
 
 In summary, it's web-based, provides specialized agents with **Wiki MD as the primary agent**, and delivers AI answers with source citations."
-
-**Key Message:** "Web-based, specialized agents with Wiki MD as primary, AI answers with source citations"
 
 ---
 
@@ -59,7 +54,6 @@ This agent uses Markdown files exported from Confluence. It contains the same DC
 
 **When to use it:** For general DCP questions, technical documentation queries, questions about processes, APIs, or configuration. This should be your first choice for most questions.
 
-**Example questions:** 'How does the DCP checkout process work?', 'What are the configuration service APIs?', 'Explain the order fulfillment workflow.'
 
 **Second, the PDF Agent.**
 
@@ -67,7 +61,7 @@ This agent uses PDF format for the **same content** as Wiki MD. Both agents are 
 
 **Purpose:** To compare PDF format against Markdown format and determine which provides better search results for daily use.
 
-**Current status:** PDF is less compact than MD and may include menus and labels. MD format is currently preferred, but PDF Agent remains active for testing purposes.
+PDF is less compact than MD and may include menus and labels. MD format is currently preferred, but PDF Agent remains active for testing purposes.
 
 **Third, the GitOps Workload Agent.**
 
@@ -87,18 +81,9 @@ This is NOT a document-based agent. It's a general-purpose AI assistant that use
 
 **Important:** Do NOT use AICore for document-based Q&A. It won't provide source citations because it doesn't search through documents. For any DCP documentation questions, use one of the RAG agents instead.
 
-**So, to summarize:**
-- **For most DCP questions:** Use **Wiki MD Agent** - it's your best bet
-  - Same content as PDF, but more compact with source links
-- **PDF Agent:** Same content as MD, used for testing which format works better
-- **For GitOps and deployment:** Use GitOps Agent
-- **For general AI (not documentation):** Use AICore Agent
-
-**My recommendation:** Start with **Wiki MD Agent** for most questions. It uses the same content as PDF but in a more compact Markdown format with source links, providing cleaner and more useful results."
-
-**Key Message:** "Wiki MD Agent is optimal for most questions - use it as your first choice"
-
 ---
+
+##아누팜
 
 ### [Slide 4: System Architecture] (2 minutes)
 
@@ -158,13 +143,12 @@ We're quite at the beginning, but we have a clear vision for where we want to go
 ### [1. Login & Interface Overview] (1 minute)
 
 **Script:**
-"Now, let me show you the actual web UI. [Open web browser]
+"Now, let me show you the actual web UI. [웹 브라우저 열기]
 
 As you can see, this is what end users see. It's very simple. After logging in, there's an input box where you can ask questions, and a dropdown to select agents.
 
 No complex setup or technical knowledge is required. Simply enter your question, select an agent, and receive an answer."
 
-**Key Message:** "Simple interface - no technical knowledge required"
 
 ---
 
@@ -175,10 +159,6 @@ No complex setup or technical knowledge is required. Simply enter your question,
 
 Each agent specializes in different areas. However, **the Wiki MD Agent is our primary agent** - it's designed to handle the majority of DCP documentation questions. For example, you can use the Wiki MD agent for general DCP questions, checkout processes, API references, and configuration guides. The other agents like GitOps are for specific scenarios.
 
-**Important:** For most questions, use the **Wiki MD Agent**. It's our primary agent and provides the best results. [Select Wiki MD Agent] This is what you should use by default."
-
-**Key Message:** "Wiki MD Agent is primary - use it by default for most questions"
-
 ---
 
 ### [3. Question & Answer Demonstrations] (8-9 minutes)
@@ -188,7 +168,7 @@ Each agent specializes in different areas. However, **the Wiki MD Agent is our p
 **Script:**
 "For this demonstration, I'll be using the **Wiki MD Agent** - our primary agent for most questions. [Show Wiki MD Agent is selected]
 
-The first question is about operational tasks: 'how do I update jenkins certificate?' [Enter question]
+The first question is about operational tasks: ==**'how do I update jenkins certificate?'**== [Enter question]
 
 This is a practical question that operations or DevOps teams might ask when they need to update certificates.
 
@@ -204,10 +184,7 @@ This demonstrates that our Wiki MD Agent can handle operational and configuratio
 
 #### Question 2: Access Permission Question (1 minute)
 
-**Script:**
-"Again, I'm using the **Wiki MD Agent** - our primary agent. [Show Wiki MD Agent is still selected]
-
-Now let's ask about access permissions: 'what CAM role access into kyma?' [Enter question]
+Now let's ask about access permissions: **=='what CAM role access into kyma?'==** [Enter question]
 
 This is an important question about who can access Kyma and what roles are required. This type of information is crucial for users who need to understand access requirements.
 
@@ -224,9 +201,9 @@ This is another example of how Wiki MD Agent helps users quickly find access and
 #### Question 3: Problem-Solving/Troubleshooting Question (2-3 minutes)
 
 **Script:**
-"Let me show you how the Wiki MD Agent handles troubleshooting questions. [Show Wiki MD Agent is still selected]
+"Let me show you how the Agent handles troubleshooting questions. [Show Wiki MD Agent is still selected]
 
-This is a real-world scenario: 'It seems we do have an issue with the pricing service connecting to CPQ. Please suggest what to do and whom to contact?' [Enter question]
+This is a real-world scenario: **=='It seems we do have an issue with the pricing service connecting to CPQ. Please suggest what to do and whom to contact?'==** [Enter question]
 
 This is exactly the type of question that support teams or developers face when troubleshooting integration issues. They need both technical guidance and contact information.
 
@@ -238,16 +215,15 @@ Below the answer, you can see multiple source citations. These are clickable lin
 
 This demonstrates the real value of this tool - when you have an urgent issue, you can quickly get both technical guidance and contact information, all with reliable source citations."
 
-**Key Message:** "Troubleshooting questions answered with solutions, contacts, and source citations"
 
 ---
 
 #### Question 4: Concept Comparison Question (2 minutes)
 
 **Script:**
-"Now let's try a conceptual question that requires comparing two different concepts. [Show Wiki MD Agent is still selected]
+"Now let's try a conceptual question that requires comparing two different concepts.
 
-The question is: 'Explain the difference between upsell and net new ordering on DCP' [Enter question]
+The question is: **=='Explain the difference between upsell and net new ordering on DCP'==** [Enter question]
 
 This is a business concept question that helps users understand the distinction between two important ordering types in DCP.
 
@@ -308,46 +284,13 @@ This conversation history feature helps maintain context across multiple questio
 - All answers include source citations for reliability
 - Conversation history maintains context
 
-**Remember:** For most questions, start with the **Wiki MD Agent**. It's optimized for DCP documentation and provides the best results.
-
 That's the entire presentation. If you have any questions, please feel free to ask."
 
-**Key Message:** "Simple, fast, and reliable DCP documentation Q&A tool - Wiki MD Agent is primary"
-
 ---
 
-## Time Management Guide
+Finally, I'd like to share one personal update.
+I completed my undergraduate studies this week, and my working-student contract ends as scheduled on November 30th.
+And recently, I received a formal full-time offer from the SAP AI Core team.
+I'll be taking a break from December to February, and then returning to SAP on March 1st of next year.
 
-- **Part 1 (PowerPoint):** 10 minutes
-  - Slide 1 (Agenda): 1 minute
-  - Slide 2 (What It Does): 2 minutes
-  - Slide 3 (Available Agents): 3 minutes
-  - Slide 4 (System Architecture): 2 minutes (may be explained by Boris or other team member)
-  - Slide 5 (Future Vision): 2 minutes
-
-- **Part 2 (Live Demo):** 10 minutes
-  - Interface Overview: 1 minute
-  - Agent Selection: 1 minute
-  - Question 1 (Jenkins certificate): 1-2 minutes
-  - Question 2 (CAM role/Kyma access): 1 minute
-  - Question 3 (Pricing service/CPQ issue): 2-3 minutes
-  - Question 4 (Upsell vs net new): 2 minutes
-  - Question 5 (TDD ordering process): 2 minutes
-  - Conversation History: 30 seconds (optional)
-
-- **Closing:** 1 minute
-
-**Total Time: ~21 minutes** (With Q&A: ~23-25 minutes)
-
----
-
-## Important Notes
-
-- ❌ DO NOT mention: Flask, SocketIO, OAuth, or other technical stacks (except in System Architecture slide if necessary)
-- ❌ DO NOT explain backend architecture in detail (System Architecture slide shows high-level flow only)
-- ❌ DO NOT mention Streamlit
-- ✅ Focus only on what users see
-- ✅ Focus only on "what you can do"
-- ✅ Emphasize source citations
-- ✅ System Architecture slide: Keep it high-level, focus on flow and components, not implementation details
-- ✅ Live Demo: All questions use Wiki MD Agent to demonstrate it as the primary agent
+Since today is the last wrap-up session, I wanted to share this in person.
