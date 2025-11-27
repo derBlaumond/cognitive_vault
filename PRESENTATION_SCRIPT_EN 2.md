@@ -244,7 +244,7 @@ This demonstrates that Wiki MD Agent excels at explaining complex concepts in a 
 **Script:**
 "Finally, let me show you how Wiki MD Agent handles process documentation questions. [Show Wiki MD Agent is still selected]
 
-This question asks about a specific process: 'Describe TDD ordering process' [Enter question]
+This question asks about a specific process: **=='Describe TDD ordering process'==** [Enter question]
 
 Process questions require step-by-step explanations, which is exactly what Wiki MD Agent is designed to handle.
 
