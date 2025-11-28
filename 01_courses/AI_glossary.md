@@ -46,14 +46,25 @@
 
 ### 1.3 자연어처리(NLP)와 신경망
 
-![Bildmotiv: neural network architecture input hidden output layers](https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRJs2NJokGm4Dgrr4HIQ-SriDXBBn6Cp532C24J3Gp-1Y6t9e0m05IEgQoaHXqjLCt6XNqFGCYRtYOPH--Z1LCwIaV1KUdljEwcLH0ctLE8ffCViEs)
-
-
 - **NLP (Natural Language Processing)**
   - 기계 번역, 감정 분석, 질의응답, 요약, 챗봇 등 “언어를 다루는 모든 기술”
 - **신경망(Neural Network)**
   - 입력층 – 여러 개의 은닉층 – 출력층 구조
   - 각각의 연결에는 가중치가 있고, 학습 과정에서 이 가중치를 조정
+
+![Bildmotiv: neural network architecture input hidden output layers](https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRJs2NJokGm4Dgrr4HIQ-SriDXBBn6Cp532C24J3Gp-1Y6t9e0m05IEgQoaHXqjLCt6XNqFGCYRtYOPH--Z1LCwIaV1KUdljEwcLH0ctLE8ffCViEs)
+
+<이미지: Feedforward Neural Network>
+- Input layer 에서 하나 이상의 Hidden layer 를 거쳐 Output layer 로 정보가 흐르는 방식
+	- 각 층은 서로 연결된 노드 또는 뉴런으로 구성되며, 이런 연결의 강도는 학습 과정에서 조정되는 가중치로 표현된다.
+1. Input layer & node:
+	- 입력층은 네트워크가 학습할 원시데이터를 수신한다. $x_1$  부터 $x_n$ 까지 레이블이 지정된 이 층의 각 노드는 입력 데이터의 단일 특징 or 속성을 나타낸다. ex. 이미지 인식 작업에서는 이것은 이미지의 픽셀 값일수도 있다. 
+	- 입력 노드는 $x_1$ 과 $x_2$ 와 같은 입력 노드 자체는 어떠한 계산도 수행하지 않는다. 입력 값을 다음 층으로 전달하기만 하고, 이러한 노드에서 시작하는 화살표는 정보 흐름 방향을 나타내며, 이런 유형의 네트워크에서는 순방향이다.
+2. Hidden layer & node:
+	- 은닉층: 대부분의 계산이 발생하는 구간. 은닉층의 각 노드는 연결선으로 표시된 것처럼 이전 층의 모든 노드로부터 입력을 받는다.
+	- 은닉 노드는 $h(1)_1$ 에서 $h(1)_m$ 까지 레이블이 지정된 은닉층의 노드는 입력의 가중 합을 계산한 다음 이 합에 비선형 활성화 함수를 적용한다. 이러한 비선형성은 네트워크가 데이터 내의 복잡한 패턴과 관계를 학습할 수 있도록 해주므로 매우 중요하다. 첨자 $(1)$ 는 이것이 첫번재 은닉층임을 나타낸다. 심층 신경망에는 이러한 층이 여러개 있다.
+3. Output
+
 
 여기까지가 **전통적인 “AI 기초”**에 해당한다.  
 이제 핵심인 **LLM·트랜스포머 시대**로 넘어간다.
