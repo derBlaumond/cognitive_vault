@@ -20,8 +20,7 @@
     - 체이닝, 도구 호출, 메모리 관리 등
         
 
-→ **LangChain**은 이 “반복적인 공통 패턴”을 추상화해서,  
-LLM 기반 애플리케이션 개발을 쉽게 해주는 프레임워크.
+→ **LangChain**은 이 “반복적인 공통 패턴”을 추상화해서, LLM 기반 애플리케이션 개발을 쉽게 해주는 프레임워크.
 
 ### 0.2 LangChain 개요
 
@@ -59,7 +58,6 @@ LLM 기반 애플리케이션 개발을 쉽게 해주는 프레임워크.
 7. **Memory (대화/상태 관리)**
     
 8. **Evaluation (체인/앱 평가 프레임워크)**
-    
 
 ---
 
@@ -93,19 +91,16 @@ def get_completion(prompt, model="gpt-3.5-turbo"):
         
     - 모델 여러 번 호출
         
-    - 결과 파싱  
-        → 같은 패턴이 반복된다.
-        
+    - 결과 파싱 → 같은 패턴이 반복된다.
 
-LangChain은 이 반복 패턴을 **모델/프롬프트/파서** 수준으로 추상화해서 편하게 쓸 수 있게 해준다.
+- LangChain은 이 반복 패턴을 **모델/프롬프트/파서** 수준으로 추상화해서 편하게 쓸 수 있게 해준다.
 
----
+
 ### 1.2 예제 시나리오 – 해적 영어 고객 이메일 번역
 
 **상황**
 
 - 고객이 이상한 “English pirate” 스타일로 클레임 메일을 보냄:
-    
 
 ```text
 I'd be fuming that me blender lid flew off and splattered my kitchen walls with smoothie.
@@ -115,9 +110,7 @@ I need your help right now, matey.
 
 **목표**
 
-- 이 텍스트를  
-    “미국 영어 + 차분하고 공손한 톤”으로 번역.
-    
+- 이 텍스트를 “미국 영어 + 차분하고 공손한 톤”으로 번역.
 
 기본적으로는 f-string으로 프롬프트를 만든다:
 
@@ -132,11 +125,8 @@ Translate the text that is delimited by triple backticks into a style that is {s
 response = get_completion(prompt)
 ````
 
-이렇게 해도 되지만,  
-**여러 고객 메일, 여러 스타일**에 대해 같은 패턴을 계속 쓰려면  
-프롬프트를 템플릿으로 관리하는 게 훨씬 낫다 → LangChain의 **PromptTemplate**.
+이렇게 해도 되지만, **여러 고객 메일, 여러 스타일**에 대해 같은 패턴을 계속 쓰려면 ==프롬프트를 템플릿==으로 관리하는 게 훨씬 낫다 → LangChain의 ==**PromptTemplate**==.
 
----
 
 ### 1.3 LangChain의 ChatOpenAI + ChatPromptTemplate
 
@@ -155,18 +145,10 @@ Text: ```{text}```
 prompt_template = ChatPromptTemplate.from_template(template_string)
 ```
 
-- `prompt_template`는 **입력 변수**를 가진 템플릿:
-    
-    - `style`
-        
-    - `text`
-        
+- `prompt_template`는 ==`style, text`== **입력 변수**를 가진 템플릿:
+
 - LangChain이 자동으로:
-    
-    - 템플릿에서 `{style}`, `{text}` 같은 변수명을 추출
-        
-    - 필요 입력을 관리해준다.
-        
+    - 템플릿에서 `{style}, {text}` 같은 변수명을 추출해서 요 입력을 관리해준다.
 
 사용 예:
 
@@ -186,15 +168,12 @@ print(customer_response.content)
 
 → LLM이 해적 영어를 공손한 미국 영어로 번역해줌.
 
-이제 같은 템플릿을,  
-다른 `style`과 `text`로 재사용 가능:
+이제 같은 템플릿을, 다른 `style`과 `text`로 재사용 가능:
 
 - 프랑스어 → 정중한 영어
-    
-- 고객 서비스 답변 → pirate 스타일로 번역 등
-    
 
----
+- 고객 서비스 답변 → pirate 스타일로 번역 등
+
 
 ### 1.4 왜 PromptTemplate이 중요한가?
 
@@ -207,13 +186,9 @@ print(customer_response.content)
     - 출력 포맷 지정
         
     - 제약 조건
-        
-- 이걸 문자열/f-string으로만 관리하면:
-    
-    - 재사용/버전 관리가 힘들고
-        
-    - 실수로 변수 누락/오타가 발생하기 쉽다.
-        
+
+- 이걸 문자열/f-string으로만 관리하면 재사용/버전 관리가 힘들고, 실수로 변수 누락/오타가 발생하기 쉽다.
+
 - LangChain의 역할:
     
     1. **템플릿 관리** – 프롬프트를 구조화된 객체로 관리
@@ -221,9 +196,7 @@ print(customer_response.content)
     2. **공용 템플릿 제공** – 요약, 질의응답, SQL 질의, API 호출 등
         
     3. **파서와 결합** – 특정 포맷으로 출력시키고, 그걸 파서로 곧장 파싱
-        
 
----
 
 ### 1.5 출력 파싱(Output Parsing) – JSON 예제
 
@@ -236,7 +209,6 @@ print(customer_response.content)
     - `delivery_days`: 배송 소요 일수
         
     - `price_value`: 가격에 대한 평가 (예: "slightly more expensive…")
-        
 
 예시 출력(파이썬 dict/JSON):
 
@@ -264,17 +236,13 @@ Review:
 """
 ````
 
-이 템플릿을 LangChain의 `ChatPromptTemplate`으로 감싸고  
-LLM에 보내면 겉으로 보기엔 JSON처럼 생긴 문자열이 돌아온다.
+이 템플릿을 LangChain의 `ChatPromptTemplate`으로 감싸고 LLM에 보내면 겉으로 보기엔 JSON처럼 생긴 문자열이 돌아온다.
 
 문제:
 
-- LLM의 응답은 **진짜 파이썬 dict가 아니라 문자열**이다.
+- ==LLM의 응답은 **진짜 파이썬 dict가 아니라 문자열**이다.==
     
 - `response["gift"]` 같은 인덱싱을 하면 에러가 난다.
-    
-
----
 
 #### 1.5.3 LangChain의 Structured Output Parser
 
@@ -300,11 +268,10 @@ output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
 format_instructions = output_parser.get_format_instructions()
 ```
 
-- `response_schemas`로 **필드 이름 + 설명**을 정의
+- ==`response_schemas`==로 **필드 이름 + 설명**을 정의
     
-- `output_parser.get_format_instructions()`  
+- ==`output_parser.get_format_instructions()`  ==
     → LLM에게 “어떤 JSON 형식으로 출력하라”는 구체적인 안내 문자열 생성
-    
 
 새 템플릿:
 
@@ -322,9 +289,7 @@ Review:
 prompt = ChatPromptTemplate.from_template(review_template)
 ````
 
-- `{format_instructions}` 위치에  
-    파서가 생성한 “이런 JSON 형식으로 출력해라” 안내문이 삽입된다.
-    
+- `{format_instructions}` 위치에 파서가 생성한 “이런 JSON 형식으로 출력해라” 안내문이 삽입된다.
 
 LLM 호출 후 파싱:
 
@@ -346,16 +311,14 @@ output_dict["price_value"]
 
 처럼 바로 사용 가능.
 
----
 
 ### 1.6 Models + Prompts + Parsers 요약
 
-- **Model**: LLM/Chat 모델 자체
+- **==Model==**: LLM/Chat 모델 자체
     
-- **Prompt**: 모델에 전달할 입력을 구조화하는 틀
+- **==Prompt==**: 모델에 전달할 입력을 구조화하는 틀
     
-- **Parser**: 출력 문자열을 **딕셔너리·리스트 등 구조화된 데이터**로 변환
-    
+- ==**Parser**==: 출력 문자열을 **딕셔너리·리스트 등 구조화된 데이터**로 변환
 
 LangChain은 이 세 가지를 잘 결합해서:
 
@@ -364,7 +327,6 @@ LangChain은 이 세 가지를 잘 결합해서:
 2. 파서를 활용해 안정적인 출력 형식 확보
     
 3. 이후 체인/에이전트에서 이 구조화된 데이터를 그대로 활용
-    
 
 ---
 
@@ -377,7 +339,7 @@ LangChain은 이 세 가지를 잘 결합해서:
     - 매번 호출은 독립적
         
     - 모델은 “이전에 무슨 대화가 있었는지” 자동으로 기억하지 않는다.
-        
+
 - 그래서 챗봇이 “기억하는 것처럼” 보이게 하려면:
     
     1. 이전 대화들을 어딘가에 저장하고
@@ -386,7 +348,6 @@ LangChain은 이 세 가지를 잘 결합해서:
 
 LangChain의 Memory는 이 작업을 쉽게 해주는 컴포넌트.
 
----
 
 ### 2.2 ConversationBufferMemory – 기본 버퍼 메모리
 
@@ -413,11 +374,8 @@ conversation.predict(input="What is my name?")
 ```
 
 - 마지막 질문에서 LLM은 “Your name is Andrew”라고 답한다.
-    
-- 이유:
-    
-    - LangChain이 내부적으로 전체 대화 로그를 합쳐서 프롬프트에 포함한다.
-        
+
+- 이유: LangChain이 내부적으로 전체 대화 로그를 합쳐서 프롬프트에 포함한다.
 
 `verbose=True`로 보면:
 
@@ -443,7 +401,6 @@ print(memory.buffer)
 
 → 전체 대화가 **그대로 문자열**로 저장.
 
----
 
 ### 2.3 메모리를 수동으로 조작하기
 
@@ -458,11 +415,9 @@ print(memory.load_memory_variables({}))
 ```
 
 - `save_context()`로 직접 입력/출력을 저장할 수도 있다.
-    
-- `load_memory_variables({})`로 메모리 내용을 불러올 수 있다.
-    
 
----
+- `load_memory_variables({})`로 메모리 내용을 불러올 수 있다.
+
 
 ### 2.4 ConversationBufferWindowMemory – 최근 N턴만 유지
 
@@ -475,7 +430,7 @@ print(memory.load_memory_variables({}))
     - 토큰 비용이 커짐
         
     - 컨텍스트 조작이 어려움
-        
+
 
 해결: **윈도우 메모리** – 최근 몇 턴만 기억
 
@@ -502,20 +457,16 @@ print(memory.load_memory_variables({}))
 - “What is 1+1?”
     
 - “What is my name?”
-    
 
-→ `k=1`이므로 마지막 교환만 남아  
-이름을 알려준 턴은 사라져서  
-“너 이름은 모르겠다”라고 답하게 된다.
 
----
+→ `k=1`이므로 마지막 교환만 남아 이름을 알려준 턴은 사라져서 “너 이름은 모르겠다”라고 답하게 된다.
+
 
 ### 2.5 ConversationTokenBufferMemory – 토큰 기준 제한
 
 - 토큰 단위로 메모리를 관리하고 싶을 때 사용
     
 - `max_token_limit`을 넘으면, 오래된 내용부터 잘라낸다.
-    
 
 ```python
 from langchain.memory import ConversationTokenBufferMemory
@@ -527,18 +478,15 @@ memory = ConversationTokenBufferMemory(
 ```
 
 - 내부적으로는 `llm`의 토큰 카운터를 사용 (모델별 토큰 규칙이 다름)
-    
-- 긴 대화에서도 최근 정보 위주로 유지하면서 토큰 비용을 제어.
-    
 
----
+- 긴 대화에서도 최근 정보 위주로 유지하면서 토큰 비용을 제어.
+
 
 ### 2.6 ConversationSummaryBufferMemory – 요약 기반 메모리
 
 아이디어:
 
 - “다 잘라내기” 대신, 오래된 대화를 **LLM에게 요약시키고 그 요약을 메모리로 유지**.
-    
 
 ```python
 from langchain.memory import ConversationSummaryBufferMemory
@@ -550,22 +498,21 @@ memory = ConversationSummaryBufferMemory(
 ```
 
 1. 처음에는 원문 대화를 그대로 저장
-    
+
 2. 토큰 한도를 넘기면:
     
     - LLM에게 기존 대화를 요약하도록 시킴
-        
-    - 요약 결과를 “시스템/설명” 형태로 메모리에 남김
-        
-3. 최근 몇 턴은 그대로, 그 이전 내용은 요약으로 유지
     
+    - 요약 결과를 “시스템/설명” 형태로 메모리에 남김
+
+3. 최근 몇 턴은 그대로, 그 이전 내용은 요약으로 유지
+
 
 예:
 
 - 일정에 대한 긴 설명(회의, 점심, 데모 등)을 대화 중에 전달
     
 - 토큰 한도 100으로 줄이면, LLM이:
-    
 
 ```text
 "Human and AI engaged in small talk...
@@ -575,10 +522,8 @@ memory = ConversationSummaryBufferMemory(
 
 같은 요약을 만든 뒤, 그걸 “기존 대화의 압축된 메모리”로 사용한다.
 
-→ 이후 질문: “What would be a good demo to show?”에 대해  
-이 요약을 보고 “최신 NLP capability를 보여주는 데모” 같은 답을 준다.
+→ 이후 질문: “What would be a good demo to show?”에 대해 이 요약을 보고 “최신 NLP capability를 보여주는 데모” 같은 답을 준다.
 
----
 
 ### 2.7 기타 메모리 타입
 
@@ -610,7 +555,6 @@ memory = ConversationSummaryBufferMemory(
     - 향후 모델 개선
         
     - 리플레이/디버깅 등에 활용하기도 한다.
-        
 
 ---
 
@@ -621,7 +565,7 @@ memory = ConversationSummaryBufferMemory(
 - 체인은 **LLM + 프롬프트 + (옵션) 기타 단계**를 묶은 “하나의 작업 단위”.
     
 - 여러 체인을 순차/분기/라우팅 등으로 연결하면 복잡한 워크플로 구성 가능.
-    
+
 
 이 레슨에서 나오는 체인 종류:
 
@@ -632,20 +576,14 @@ memory = ConversationSummaryBufferMemory(
 3. **SequentialChain** – 여러 입력/출력 키를 가진 복잡한 체인들 연결
     
 4. **Router Chains (MultiPromptChain)** – 입력에 따라 적절한 서브 체인으로 라우팅
-    
 
----
 
 ### 3.2 데이터 준비 – Pandas DataFrame
 
-- CSV에서 `product`, `review` 등의 컬럼을 읽어와서  
-    여러 행(데이터 포인트)을 가진 DataFrame으로 만든다.
+- CSV에서 `product`, `review` 등의 컬럼을 읽어와서 여러 행(데이터 포인트)을 가진 DataFrame으로 만든다.
     
-- LangChain 체인은 이런 많은 행에 대해 반복적으로 적용할 수 있다.  
-    (여기선 구조만 이해하면 되고, pandas 디테일은 중요하지 않음.)
-    
+- LangChain 체인은 이런 많은 행에 대해 반복적으로 적용할 수 있다. (여기선 구조만 이해하면 되고, pandas 디테일은 중요하지 않음.)
 
----
 
 ### 3.3 LLMChain – 가장 기본적인 체인
 
@@ -674,7 +612,7 @@ result = chain.run(product=product)
     - Prompt: `ChatPromptTemplate`
         
     - Chain: `LLMChain`
-        
+
 - `chain.run()`을 호출하면:
     
     - 내부적으로 템플릿 변수를 채움
@@ -682,11 +620,10 @@ result = chain.run(product=product)
     - 완성된 프롬프트를 LLM에 전달
         
     - 결과를 문자열로 반환
-        
+
 
 이 **LLMChain**이 이후 모든 복잡한 체인의 기본 단위가 된다.
 
----
 
 ### 3.4 SimpleSequentialChain – 직렬 체인 (단일 입/출력)
 
@@ -695,7 +632,6 @@ result = chain.run(product=product)
 1. **체인 1**: 제품 이름을 회사 이름으로 변환
     
 2. **체인 2**: 그 회사 이름을 20단어 설명으로 확장
-    
 
 ```python
 from langchain.chains import SimpleSequentialChain
@@ -729,9 +665,7 @@ overall_chain.run("queen-size sheet set")
     - **각 체인이 입력 1개 / 출력 1개**일 때 적합
         
     - 앞 체인의 출력이 **그대로** 다음 체인의 입력으로 들어간다.
-        
 
----
 
 ### 3.5 SequentialChain – 다중 입력/출력 체인
 
@@ -744,7 +678,6 @@ overall_chain.run("queen-size sheet set")
 3. 원 리뷰의 언어 감지 → `language`
     
 4. `summary` + `language`를 사용해 **원 언어로 후속 답장** 생성 → `followup_message`
-    
 
 구성:
 
@@ -799,24 +732,20 @@ overall_chain = SequentialChain(
 
 - **입력/출력 변수 이름 관리가 핵심**
     
-    - `output_key="english_review"`로 지정한 이름을  
-        다음 체인에서 `{english_review}`로 그대로 사용해야 한다.
+    - `output_key="english_review"`로 지정한 이름을 다음 체인에서 `{english_review}`로 그대로 사용해야 한다.
         
 - `SequentialChain`은:
     
     - 각 단계가 **여러 입력을 받거나** 여러 출력을 낼 수 있다.
         
     - 내부적으로 **키-값 딕셔너리**를 주고받는다.
-        
 
----
 
 ### 3.6 Router + MultiPromptChain – 입력 종류에 따라 라우팅
 
 문제:
 
-- 서로 다른 도메인(물리, 수학, 역사, 컴퓨터과학)에 대해  
-    각기 다른 프롬프트/체인을 쓰고 싶다.
+- 서로 다른 도메인(물리, 수학, 역사, 컴퓨터과학)에 대해 각기 다른 프롬프트/체인을 쓰고 싶다.
     
 - 입력 질문에 따라:
     
@@ -825,7 +754,6 @@ overall_chain = SequentialChain(
     - “이건 수학이다 → 수학 체인으로”
         
     - “아무것도 아니면 → 기본 체인으로”
-        
 
 #### 3.6.1 도메인별 프롬프트 템플릿
 
@@ -841,7 +769,7 @@ cs_template = "You are a computer science expert. Answer the question:\n{input}"
 - 이름(name)
     
 - 설명(description)을 붙인다 (라우터가 참조):
-    
+
 
 ```python
 prompt_infos = [
@@ -863,7 +791,7 @@ prompt_infos = [
 - **RouterOutputParser**
     
 - **MultiPromptChain** (또는 유사 라우팅 체인)
-    
+
 
 구조 개념:
 
@@ -884,7 +812,7 @@ prompt_infos = [
         를 파싱
         
 4. `MultiPromptChain`이 실제 서브 체인을 호출
-    
+
 
 사용 예:
 
@@ -926,7 +854,6 @@ overall_chain.run("What is DNA?")
 
 → **임베딩(embeddings) + 벡터 DB(vector store)** 패턴.
 
----
 
 ### 4.2 고수준: VectorStoreIndexCreator + index.query
 
@@ -979,7 +906,6 @@ response = index.query(query)
     - LLM에 전달 후 응답 생성
         
 
----
 
 ### 4.3 임베딩(Embeddings)의 개념
 
@@ -1009,7 +935,6 @@ response = index.query(query)
 - “질문에 가장 관련 있는 문서 조각” 추출
     
 
----
 
 ### 4.4 벡터 데이터베이스(Vector Store)의 개념
 
@@ -1035,7 +960,6 @@ response = index.query(query)
 4. LLM이 “주어진 컨텍스트를 기반으로” 답변 작성
     
 
----
 
 ### 4.5 로우레벨 구현 – 직접 단계 나눠 보기
 
@@ -1063,7 +987,6 @@ similar_docs = db.similarity_search(query, k=4)
 
 `similar_docs[0]` 등을 보면 실제 sun blocking 셔츠 상품이 나온다.
 
----
 
 ### 4.6 Retriever + RetrievalQA 체인
 
@@ -1073,7 +996,6 @@ similar_docs = db.similarity_search(query, k=4)
 - `ChatOpenAI`로 LLM 준비
     
 - RetrievalQA 체인 구성:
-    
 
 ```python
 from langchain.chains import RetrievalQA
@@ -1120,9 +1042,7 @@ result = qa_chain({"query": query})
         - 점수가 가장 높은 답변 선택
             
         - LLM이 스스로 “관련도 점수”를 매기도록 요구해야 함
-            
 
----
 
 ### 4.7 한 줄짜리 vs 상세 구성
 
@@ -1193,16 +1113,13 @@ result = qa_chain({"query": query})
     - 혹은 또 다른 LLM으로
         
 
----
 
 ### 5.2 평가용 체인 준비 – 문서 QA 체인 재사용
 
 - 이전 레슨에서 만든 **RetrievalQA 체인**을 그대로 평가 대상 앱으로 사용.
     
 - 데이터 로딩, 인덱스 생성, 체인 생성까지 동일.
-    
 
----
 
 ### 5.3 평가용 예제 데이터셋 만들기
 
@@ -1221,7 +1138,6 @@ result = qa_chain({"query": query})
 
 이렇게 만든 예제는 정확하지만, **확장성이 떨어진다.**
 
----
 
 #### 5.3.2 LangChain으로 자동 생성 – QAGenerationChain
 
@@ -1230,7 +1146,6 @@ LangChain은 **문서 → (질문, 정답)** 쌍을 생성하는 체인을 제�
 1. 문서를 LLM에 넘기고
     
 2. “이 문서 내용에 관해 적절한 질문 1개와 그 정답을 생성하라”
-    
 
 → 많은 문서에 대해 자동으로 QA 데이터셋을 만들 수 있다.
 
@@ -1243,10 +1158,8 @@ LangChain은 **문서 → (질문, 정답)** 쌍을 생성하는 체인을 제�
 }
 ```
 
-그리고 이 (query, answer)들을 기존 수동 예제와 합쳐서  
-평가용 examples 리스트를 만든다.
+그리고 이 (query, answer)들을 기존 수동 예제와 합쳐서 평가용 examples 리스트를 만든다.
 
----
 
 ### 5.4 langchain.debug – 체인 내부 들여다보기
 
@@ -1268,7 +1181,6 @@ langchain.debug = True
 - LLM에 실제로 전달되는 프롬프트(시스템/유저 메시지 포함)
     
 - 토큰 사용량 (prompt_tokens, completion_tokens, total_tokens)
-    
 
 등을 모두 콘솔에 출력해준다.
 
@@ -1280,9 +1192,7 @@ langchain.debug = True
         
     - “검색은 맞는데 프롬프트/LLM이 이상한지”  
         를 구분해서 디버깅할 수 있다.
-        
 
----
 
 ### 5.5 LLM을 이용한 자동 평가 – QAEvalChain
 
@@ -1293,7 +1203,6 @@ langchain.debug = True
     - 서로 다른 표현이어도 의미가 같을 수 있다.
         
 - 따라서 **LLM에게 평가를 맡긴다**:
-    
 
 ```python
 from langchain.evaluation.qa import QAEvalChain
@@ -1314,7 +1223,6 @@ graded_outputs = eval_chain.evaluate(
 - `prediction` (앱의 답변)
     
 - `grade` (LLM이 판단한 평가: “CORRECT” 등)
-    
 
 을 얻는다.
 
@@ -1327,18 +1235,15 @@ graded_outputs = eval_chain.evaluate(
 - predicted answer: “The Cozy Comfort Pullover Set, Stripe does have side pockets.”
     
 - grade: “CORRECT”
-    
 
 여기서:
 
 - 문자상으로는 “Yes” vs 긴 문장이라 완전히 다르다.
     
 - 하지만 LLM은 의미를 이해하고 “정답”으로 판단.
-    
 
 → 이게 전통적인 문자열/정규식 기반 평가와 다른 점.
 
----
 
 ### 5.6 LangChain Evaluation Platform (UI)
 
@@ -1353,7 +1258,6 @@ graded_outputs = eval_chain.evaluate(
         
     - 특정 실행을 “데이터셋”에 추가해서  
         나중에 재평가/비교 시 사용할 수 있음
-        
 
 사용 흐름:
 
@@ -1364,7 +1268,6 @@ graded_outputs = eval_chain.evaluate(
 3. 체인 버전을 바꿀 때마다 같은 데이터셋으로 다시 평가
     
 4. 결과 비교 → 개선 여부 확인
-    
 
 ---
 
@@ -1389,7 +1292,6 @@ graded_outputs = eval_chain.evaluate(
 
 LangChain의 **Agents**는 바로 이런 패턴을 구현하는 프레임워크.
 
----
 
 ### 6.2 Agents의 구성 요소
 
@@ -1416,9 +1318,7 @@ LangChain의 **Agents**는 바로 이런 패턴을 구현하는 프레임워크.
 4. **Parsing / Error Handling**
     
     - LLM 출력에서 “어떤 도구를, 어떤 입력으로 호출할지”를 파싱해야 한다.
-        
 
----
 
 ### 6.3 기본 세팅 – DuckDuckGo + Wikipedia 에이전트
 
@@ -1445,9 +1345,7 @@ agent = initialize_agent(
     - React(Reason+Act) 스타일 에이전트
         
     - LLM이 “Thought → Action → Observation → Thought ... → Final Answer” 순서로 추론
-        
 
----
 
 ### 6.4 예제 – 2022 월드컵 우승팀
 
@@ -1468,10 +1366,8 @@ agent.run("Who won the 2022 World Cup?")
 5. 추가 검색/생각을 통해 최종적으로 “Argentina won …”이라는 답에 도달
     
 
-→ Agents는 아직 실험적이고, 항상 완벽하지 않다.  
-하지만 “외부 도구 + LLM 추론”의 대표 패턴.
+→ Agents는 아직 실험적이고, 항상 완벽하지 않다. 하지만 “외부 도구 + LLM 추론”의 대표 패턴.
 
----
 
 ### 6.5 Wikipedia 예제 – Tom M. Mitchell
 
@@ -1490,9 +1386,7 @@ agent.run("What book did Tom M. Mitchell write?")
 4. “Machine Learning”이라는 교과서 정보를 찾음
     
 5. 최종 답: “He wrote the textbook 'Machine Learning'.”
-    
 
----
 
 ### 6.6 커스텀 Tool 만들기 – 오늘 날짜 함수
 
