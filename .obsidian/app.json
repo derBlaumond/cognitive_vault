@@ -1,10 +1,1 @@
-{
-  "workspace:Left": [
-    "file-explorer",
-    "search",
-    "calendar"
-  ],
-  "workspace:Right": [
-    "graph"
-  ]
-}
+{}

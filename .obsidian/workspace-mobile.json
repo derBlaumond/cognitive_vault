@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_courses/00_prog_lang/ts/01_ts_basics/01_intro.md",
+                "file": "BACKEND_DESIGN_PLAN.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01_intro"
+              "title": "BACKEND_DESIGN_PLAN"
             }
           }
         ]
@@ -166,11 +166,11 @@
   },
   "active": "6634b7a9841cd48c",
   "lastOpenFiles": [
+    "01_courses/00_prog_lang/ts/01_ts_basics/01_intro.md",
     "01_courses/00_prog_lang/ts/01_ts_basics/05_decorator_type_system.md",
     "01_courses/00_prog_lang/ts/01_ts_basics/06_advanced_concepts.md",
     "01_courses/00_prog_lang/ts/01_ts_basics/04_oop.md",
     "01_courses/00_prog_lang/ts/01_ts_basics/03_function_generic.md",
-    "01_courses/00_prog_lang/ts/01_ts_basics/02_core_types.md",
-    "01_courses/00_prog_lang/ts/01_ts_basics/01_intro.md"
+    "01_courses/00_prog_lang/ts/01_ts_basics/02_core_types.md"
   ]
 }
