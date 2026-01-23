@@ -516,7 +516,7 @@
 ```
 
 **검증**:
-- [ ] TypeScript 컴파일 에러 없음
+- [x] TypeScript 컴파일 에러 없음
 - [ ] 의존성 주입 확인
 
 #### Day 8: OnboardingModule 업데이트
