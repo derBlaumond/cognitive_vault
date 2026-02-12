@@ -188,7 +188,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "guava/AI_AGENT_IMPLEMENTATION_ROADMAP.md",
+            "file": "guava/PRODUCT_REQUIREMENTS_DOCUMENT.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -255,14 +255,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "6634b7a9841cd48c",
+  "active": "680e080a08c303ab",
   "lastOpenFiles": [
+    "guava/AI_AGENT_IMPLEMENTATION_ROADMAP.md",
     "2.md",
     "Untitled.md",
     "Untitled 1.md",
     "guava/PRODUCT_REQUIREMENTS_DOCUMENT.md",
     "1.md",
-    "guava/AI_AGENT_IMPLEMENTATION_ROADMAP.md",
     "BACKEND_DESIGN_PLAN.md",
     "guava/AI_AGENT_MASTER_PLAN.md",
     "guava/FEATURE_DOCUMENTATION_TEMPLATE.md",
